@@ -25,15 +25,15 @@ public class DB28_WinCoin : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            //Player WIN State;
             print("You Win!");
             Destroy(gameObject);
-            //Go to Win Scene;
         }
         if (collision.tag == "Buffer")
         {
+            //Player LOSE State;
             print("You Lose...");
             Destroy(gameObject);
-            //Go to Game Over Scene;
         }
 
     }

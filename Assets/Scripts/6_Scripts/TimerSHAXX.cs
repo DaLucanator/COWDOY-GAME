@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class 6_TimerSHAXX : MonoBehaviour
+public class TimerSHAXX : MonoBehaviour
 {
     float currentTime = 0f;
     float startingTime = 5f;

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Hostile
   - Bullet
+  - WW24Mouse
+  - WW24Pen
   layers:
   - Default
   - TransparentFX

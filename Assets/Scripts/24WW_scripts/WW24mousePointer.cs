@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mousePointer : MonoBehaviour
+public class WW24mousePointer : MonoBehaviour
 {
     public Transform temporary;
     public Vector3 mousePos;

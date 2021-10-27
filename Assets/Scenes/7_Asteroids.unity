@@ -5832,8 +5832,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Time Remaining: 00'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b22d9905c8a937040ade214b709bd383, type: 2}
-  m_sharedMaterial: {fileID: 4693747558935349226, guid: b22d9905c8a937040ade214b709bd383, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5857,8 +5857,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

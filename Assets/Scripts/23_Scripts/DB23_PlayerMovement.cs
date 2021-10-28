@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Db28_PlayerMovementAlt : MonoBehaviour
+public class DB23_PlayerMovement : MonoBehaviour
 {
     public float speed = 10.0f;
-    public Rigidbody rb;
+    public Rigidbody2D rb;
     public Vector2 movement;
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -26,7 +26,7 @@ public class Db28_PlayerMovementAlt : MonoBehaviour
         rb.velocity = direction * speed;
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Hostile")
         {

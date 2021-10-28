@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Hostile
   - Bullet
+  - Buffer
+  - CanKill
   layers:
   - Default
   - TransparentFX

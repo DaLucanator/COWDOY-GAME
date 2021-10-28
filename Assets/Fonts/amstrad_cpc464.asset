@@ -73,7 +73,7 @@ MonoBehaviour:
     m_StyleName: Regular
     m_PointSize: 8
     m_Scale: 1
-    m_LineHeight: 12
+    m_LineHeight: 8
     m_AscentLine: 8
     m_CapLine: 8
     m_MeanLine: 6
@@ -89,6 +89,20 @@ MonoBehaviour:
     m_StrikethroughThickness: 0.3984375
     m_TabWidth: 8
   m_GlyphTable:
+  - m_Index: 3
+    m_Metrics:
+      m_Width: 0
+      m_Height: 0
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 0
+      m_HorizontalAdvance: 8
+    m_GlyphRect:
+      m_X: 0
+      m_Y: 0
+      m_Width: 0
+      m_Height: 0
+    m_Scale: 1
+    m_AtlasIndex: 0
   - m_Index: 4
     m_Metrics:
       m_Width: 2
@@ -1169,6 +1183,10 @@ MonoBehaviour:
     m_AtlasIndex: 0
   m_CharacterTable:
   - m_ElementType: 1
+    m_Unicode: 32
+    m_GlyphIndex: 3
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 33
     m_GlyphIndex: 4
     m_Scale: 1
@@ -1899,7 +1917,7 @@ MonoBehaviour:
     atlasWidth: 512
     atlasHeight: 512
     characterSetSelectionMode: 6
-    characterSequence: 21-22,27-3B,3D,3F,41-5A,61-7A
+    characterSequence: 20-22,27-3B,3D,3F,41-5A,61-7A
     referencedFontAssetGUID: b22d9905c8a937040ade214b709bd383
     referencedTextAssetGUID: 
     fontStyle: 0

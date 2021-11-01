@@ -547,6 +547,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bison (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1927440570980521566, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
+      propertyPath: speed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927440570980521566, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 552896286}
     - target: {fileID: 1927440570980521567, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -718,6 +726,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bison (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1927440570980521566, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
+      propertyPath: speed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927440570980521566, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 552896286}
     - target: {fileID: 1927440570980521567, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -775,6 +791,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bison (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1927440570980521566, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
+      propertyPath: speed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927440570980521566, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 552896286}
     - target: {fileID: 1927440570980521567, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1210,6 +1234,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bison (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1927440570980521566, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
+      propertyPath: speed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927440570980521566, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 552896286}
     - target: {fileID: 1927440570980521567, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1266,6 +1298,10 @@ PrefabInstance:
     - target: {fileID: 1927440570980521565, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
       propertyPath: m_Name
       value: Bison
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927440570980521566, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
+      propertyPath: speed
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1927440570980521566, guid: 9909f0afa779e084ea3b59287c85b0be, type: 3}
       propertyPath: stats

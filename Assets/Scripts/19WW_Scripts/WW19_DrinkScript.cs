@@ -17,9 +17,9 @@ public class WW19_DrinkScript : MonoBehaviour
     void Start()
     {
         smash = this.GetComponent<AudioSource>();
-        delayTime = Random.RandomRange(10, 30);
+        delayTime = Random.Range(10, 30);
         delayTime = delayTime / 10;
-        moveSpeed = (Random.RandomRange(80, 180)) * 0.1f;
+        moveSpeed = (Random.Range(80, 180)) * 0.1f;
         StartCoroutine(quickMafs());
     }
 

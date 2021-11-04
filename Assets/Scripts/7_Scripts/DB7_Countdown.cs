@@ -31,6 +31,7 @@ public class DB7_Countdown : MonoBehaviour
                 timerStarted = false;
                 currentTime = 0;
                 //Player WIN State
+                GameController.current.ReturnToMain(true);
             }
 
             timerText.text = "Time Remaining: " + currentTime.ToString("f0");

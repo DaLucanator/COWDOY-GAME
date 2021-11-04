@@ -13,10 +13,18 @@ public class DB13_TargetKill : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             
-            //If the Raycast hits an object that isn't null, and has the "CanKill" tag, destroy it//
-            if (Physics.Raycast(ray, out hit, 100.0f) && hit.transform.gameObject != null && hit.transform.gameObject.tag == "CanKill")
+            //If the Raycast hits an object that isn't null, and has the "Hostile" tag, destroy it//
+            if (Physics.Raycast(ray, out hit, 100.0f) && hit.transform.gameObject != null && hit.transform.gameObject.tag == "Hostile")
             {
-                Debug.Log("Click");
+                Debug.Log("Clicked Bandit");
+                Destroy(hit.transform.gameObject);
+            }
+
+            //If the Raycast hits an object that isn't null, and has the "Ally" tag, destroy it//
+            if (Physics.Raycast(ray, out hit, 100.0f) && hit.transform.gameObject != null && hit.transform.gameObject.tag == "Ally")
+            {
+                Debug.Log("Clicked Hostage");
+                Debug.Log("You Lose...");
                 Destroy(hit.transform.gameObject);
             }
         }

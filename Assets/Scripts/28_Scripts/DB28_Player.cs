@@ -18,14 +18,6 @@ public class DB28_Player : MonoBehaviour
     void Update()
     {
         bulletTimer -= Time.deltaTime;
-
-        if (hp == 0)
-        {
-            print("You Lose...");
-            Destroy(gameObject);
-            //Go to Game Over Scene;
-        }
-
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -36,6 +28,12 @@ public class DB28_Player : MonoBehaviour
             print(hp);
             bulletTimer = bulletCooldown;
             //Sound effect "Player Hurt"//
+            if (hp == 0)
+            {
+                print("You Lose...");
+                Destroy(gameObject);
+                GameController.current.ReturnToMain(false);
+            }
         }
     }
 }

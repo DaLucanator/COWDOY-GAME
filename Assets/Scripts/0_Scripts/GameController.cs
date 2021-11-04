@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 
@@ -21,14 +22,27 @@ public class GameController : MonoBehaviour
     private HealthManager healthManager;
     [ReadOnly]
     [SerializeField]
-    private bool currentGameWin = false;
+    private SceneManagerScript sceneManager;
+    [ReadOnly]
+    [SerializeField]
+    private string microGameName;
+    [ReadOnly]
+    [SerializeField]
+    private bool microGameWin = false;
 
 
     private void Awake()
     {
-        current = this;
+        if (FindObjectsOfType<GameController>().Length != 1) { Destroy(this.transform.parent.gameObject); }
+        else 
+        { 
+            DontDestroyOnLoad(this.transform.parent.gameObject);
+            current = this;
+        }
+
         dialogueManager = GetComponent<DialogueManager>();
         healthManager = GetComponent<HealthManager>();
+        sceneManager = GetComponent<SceneManagerScript>();
     }
 
     private void Start()
@@ -43,11 +57,11 @@ public class GameController : MonoBehaviour
 
     private IEnumerator TestRoutine()
     {
-        yield return dialogueManager.TypeText("This  is  a  test  of  several  game  systems", "COWDOY  LUC");
-        yield return DamagePlayer(7);
-        yield return dialogueManager.TypeText("Oh  nooo!  The  player  is  on  low  health", "COWDOY  LUC");
-        yield return dialogueManager.TypeText("Let's  heal  the  player!", "COWDOY  LUC");
-        yield return HealPlayer(20);
+        sceneManager.pickMicrogame();
+        yield return dialogueManager.TypeText(" Welcome to the main scene", "BATTLE");
+        yield return dialogueManager.TypeText("battle scene functionality not yet implemented", "BATTLE");
+        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad.ToString(), "BATTLE");
+        sceneManager.loadMicroGame();
     }
 
     public IEnumerator HealPlayer(int healAmount)
@@ -63,6 +77,33 @@ public class GameController : MonoBehaviour
     public void KillPLayer()
     {
         Debug.Log("The PLayer is Dead");
+    }
+
+    public void ReturnToMain(bool win)
+    {
+        microGameWin = win;
+        SceneManager.LoadScene("0_BattleScene");
+        if(win == true) { StartCoroutine(playerWonMicro()); }
+        else { StartCoroutine(playerLostMicro()); }
+    }
+
+    private IEnumerator playerWonMicro()
+    {
+        sceneManager.pickMicrogame();
+        yield return dialogueManager.TypeText("The Player won the microgame", "BATTLE");
+        yield return dialogueManager.TypeText("battle scene functionality not yet implemented", "BATTLE");
+        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad, "BATTLE");
+        sceneManager.loadMicroGame();
+    }
+
+    private IEnumerator playerLostMicro()
+    {
+        sceneManager.pickMicrogame();
+        yield return dialogueManager.TypeText("The Player lost the microgame", "BATTLE");
+        yield return DamagePlayer(1);
+        yield return dialogueManager.TypeText("battle scene functionality not yet implemented", "BATTLE");
+        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad, "BATTLE");
+        sceneManager.loadMicroGame();
     }
 
 }

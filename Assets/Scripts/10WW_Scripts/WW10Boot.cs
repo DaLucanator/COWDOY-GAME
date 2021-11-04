@@ -21,7 +21,7 @@ public class WW10Boot : MonoBehaviour
     void Update()
     {
         bootPosition = this.transform.position;
-        if (shakeCount < 79)
+        if (shakeCount < maxShake)
         {
             if (Input.anyKeyDown)
             {

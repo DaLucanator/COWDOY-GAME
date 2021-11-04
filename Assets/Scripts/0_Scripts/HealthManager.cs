@@ -69,7 +69,7 @@ public class HealthManager : MonoBehaviour
     {
         ui_Flash.constantFlash = false;
 
-        for (int i = 0; i <= damageAmount; i++)
+        for (int i = 1; i <= damageAmount; i++)
         {
 
             if (playerHealth <= 0)

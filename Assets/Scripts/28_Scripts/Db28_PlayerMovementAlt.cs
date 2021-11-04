@@ -32,6 +32,7 @@ public class Db28_PlayerMovementAlt : MonoBehaviour
         {
             print("You Lose...");
             Destroy(gameObject);
+            GameController.current.ReturnToMain(false);
             //Go to Game Over Scene;
         }
     }

@@ -26,6 +26,7 @@ public class DB13_TargetKill : MonoBehaviour
                 Debug.Log("Clicked Hostage");
                 Debug.Log("You Lose...");
                 Destroy(hit.transform.gameObject);
+                GameController.current.ReturnToMain(false);
             }
         }
     }

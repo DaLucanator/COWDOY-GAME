@@ -55,6 +55,7 @@ public class WW11_CactAss : MonoBehaviour
     public void Win()
     {
         Debug.Log("Win");
+        GameController.current.ReturnToMain(true);
     }
 
     public void Lose()

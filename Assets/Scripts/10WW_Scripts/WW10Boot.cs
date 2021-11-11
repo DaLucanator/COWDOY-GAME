@@ -26,8 +26,8 @@ public class WW10Boot : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 shakeCount++;
-                randx = Random.Range(-0.34f, 0.07f);
-                randy = Random.Range(0.33f, -0.36f);
+                randx = Random.Range(-0.21f, 0.31f);
+                randy = Random.Range(1.98f, 1.53f);
                 this.transform.position = new Vector3(randx, randy, -1.72f);
                 Snape.transform.position = Vector3.Lerp(Snape.transform.position, moveto.transform.position, 0.02f);
             }

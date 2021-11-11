@@ -153,10 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: -2317301373200775216, guid: 11693e92537270147a05b924b2dd168b, type: 3}
-  spawnAmount: 2
+  spawnAmount: 1
   spawnRate: 1.7
   spawnSpread: 15
-  spawnVariance: 20
+  spawnVariance: 15
 --- !u!4 &39897362
 Transform:
   m_ObjectHideFlags: 0

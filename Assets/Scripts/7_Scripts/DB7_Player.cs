@@ -64,15 +64,22 @@ public class DB7_Player : MonoBehaviour
         bullet.Project(this.transform.up);
     }
 
+
+    bool gamelose = true;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Hostile")
         {
-            //Player Loss State
-            print("You Lose...");
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = 0f;
-            this.gameObject.SetActive(false);
+            if (gamelose == true)
+            {
+                //Player Loss State
+                print("You Lose...");
+                gamelose = false;
+                rigidbody.velocity = Vector3.zero;
+                rigidbody.angularVelocity = 0f;
+                this.gameObject.SetActive(false);
+                GameController.current.ReturnToMain(false);
+            }
         }
     }
 }

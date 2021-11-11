@@ -9,6 +9,7 @@ public class DB7_Countdown : MonoBehaviour
     float startTime;
     float currentTime;
     bool timerStarted = false;
+    bool gamewin = true;
 
     [SerializeField]
     TMP_Text timerText;
@@ -27,13 +28,16 @@ public class DB7_Countdown : MonoBehaviour
             currentTime -= Time.deltaTime;
             if (currentTime <= 0)
             {
-                Debug.Log("You Win!");
-                timerStarted = false;
-                currentTime = 0;
-                //Player WIN State
-                GameController.current.ReturnToMain(true);
+                if (gamewin == true)
+                {
+                    Debug.Log("You Win!");
+                    gamewin = false;
+                    timerStarted = false;
+                    currentTime = 0;
+                    //Player WIN State
+                    GameController.current.ReturnToMain(true);
+                }
             }
-
             timerText.text = "Time Remaining: " + currentTime.ToString("f0");
         }
     }

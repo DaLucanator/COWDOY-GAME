@@ -30,6 +30,7 @@ public class DB23_Countdown : MonoBehaviour
                 Debug.Log("You Lose...");
                 timerStarted = false;
                 currentTime = 0;
+                GameController.current.ReturnToMain(false);
                 //Player LOSE State
             }
 

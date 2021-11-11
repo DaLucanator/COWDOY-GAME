@@ -18,6 +18,7 @@ public class DB13_CircuitKillcheck : MonoBehaviour
         if (ActiveCircuits <= 0)
         {
             Debug.Log("You Win!");
+            GameController.current.ReturnToMain(true);
         }
     }
 }

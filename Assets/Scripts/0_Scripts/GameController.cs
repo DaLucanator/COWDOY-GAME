@@ -5,11 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 
-// I (Luc) have come to the conclusion, that due to wanting to orchestrate pauses between events via coroutines, that our project is better off without an observer pattern.
-// When using events things got complex: I needed events for both the start and end of each coroutine sometimes or lots of bools (at least the way I was doing it)
-//I'm using a singleton pattern. Our project is small enough that dependencies aren't a problem. The dependencies are limited and don't branch too far.
-
-//it's actually a mess now that it's done lmao
+    //this is the top layer of the game controller. In concept anytime a main game "manager" script needed to talk to another it would do it through here.
 
 {
     public static GameController current;

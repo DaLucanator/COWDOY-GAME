@@ -26,6 +26,6 @@ public class WW10SnakeBrain : MonoBehaviour
 
     void Win()
     {
-        Debug.Log("Win!");
+        GameController.current.ReturnToMain(true);
     }
 }

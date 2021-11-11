@@ -64,18 +64,20 @@ public class WW19_DrinkScript : MonoBehaviour
     void Win()
     {
         Debug.Log("Win");
-        smash.clip = winSound;
-        smash.Play();
+        
         move = false;
+
+        GameController.current.ReturnToMain(true);
         //add win event
     }
 
     void Lose()
     {
         Debug.Log("Lose");
-        smash.clip = smashSound;
-        smash.Play();
+
         move = false;
+
+        GameController.current.ReturnToMain(false);
         //Add loss.jpg
     }
 

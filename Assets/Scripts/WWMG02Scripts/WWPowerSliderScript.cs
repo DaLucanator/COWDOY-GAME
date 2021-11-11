@@ -47,7 +47,7 @@ public class WWPowerSliderScript : MonoBehaviour
 
             if (powNum > 40 && powNum < 60)
             {
-                Debug.Log("Win");
+                Win();
             }
             else
             {
@@ -72,5 +72,11 @@ public class WWPowerSliderScript : MonoBehaviour
             }
             yield return new WaitForSeconds((speed) * 0.001f);
         }
+    }
+
+    void Win()
+    {
+        Debug.Log("Win");
+        GameController.current.ReturnToMain(true);
     }
 }

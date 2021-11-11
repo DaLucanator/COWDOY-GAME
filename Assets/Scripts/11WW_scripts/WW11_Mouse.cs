@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mousePointer : MonoBehaviour
+public class WW11_Mouse : MonoBehaviour
 {
     public Transform temporary;
     public Vector3 mousePos;
@@ -12,7 +12,8 @@ public class mousePointer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //Set Cursor to not be visible
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class mousePointer : MonoBehaviour
         if (Physics.Raycast(castPoint, out hit, Mathf.Infinity, hitLayers))
         {
             //this.transform.position = hit.point;
-            this.transform.position = new Vector3(hit.point.x, hit.point.y, -1f);
+            this.transform.position = new Vector3(hit.point.x, hit.point.y, -0.563f);
         }
     }
 }

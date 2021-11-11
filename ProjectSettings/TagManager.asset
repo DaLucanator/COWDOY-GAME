@@ -8,6 +8,9 @@ TagManager:
   - Bullet
   - Buffer
   - Ally
+  - WW24Mouse
+  - WW24Pen
+  - Cactus
   layers:
   - Default
   - TransparentFX

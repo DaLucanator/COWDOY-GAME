@@ -2119,7 +2119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99449a7d9bae1344482921f33dcba8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 3
+  startTime: 15
   timerText: {fileID: 164523605}
 --- !u!65 &845266382
 BoxCollider:

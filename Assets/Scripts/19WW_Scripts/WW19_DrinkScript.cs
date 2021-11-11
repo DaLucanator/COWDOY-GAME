@@ -28,7 +28,7 @@ public class WW19_DrinkScript : MonoBehaviour
     {
         if (overlap)
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.anyKeyDown)
             {
                 move = false;
 

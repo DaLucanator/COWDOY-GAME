@@ -1447,6 +1447,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamesToLoad:
   - 28_BulletHell
+  - 7_Asteroids
+  - 10_WWSnakeShake
+  - 11WW_CactusAttackedUs
+  - 13_StickemUp
+  - 17_WWGunHolstering
+  - 19WW_SlidingDrinks
+  - 21_WWCatchThatTrain
+  - 23_CellEscape
+  - 24_WoodysRoundup
+  - 28_BulletHell
   gamesToNotLoad: []
   gameToLoad: 
 --- !u!1 &1862449176

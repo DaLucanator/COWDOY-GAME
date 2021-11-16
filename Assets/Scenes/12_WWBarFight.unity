@@ -238,6 +238,11 @@ MonoBehaviour:
   punchTimer: 0.2
   hitting: 0
   defending: 0
+  AIAttemptCheck: 0
+  ended: 0
+  Idle: {fileID: 2100000, guid: 1514290943514424c9066ebf81453ada, type: 2}
+  Attack: {fileID: 2100000, guid: 19668d5404c9e754389785e26d1be720, type: 2}
+  Defend: {fileID: 2100000, guid: efe56505cd47f75489d2f4ad4923a578, type: 2}
 --- !u!1 &402597697
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +498,11 @@ MonoBehaviour:
   punchTimer: 0.35
   hitting: 0
   defending: 0
+  AIAttemptCheck: 0
+  ended: 0
+  Idle: {fileID: 2100000, guid: 1514290943514424c9066ebf81453ada, type: 2}
+  Attack: {fileID: 2100000, guid: 19668d5404c9e754389785e26d1be720, type: 2}
+  Defend: {fileID: 2100000, guid: efe56505cd47f75489d2f4ad4923a578, type: 2}
 --- !u!1 &1130837451
 GameObject:
   m_ObjectHideFlags: 0

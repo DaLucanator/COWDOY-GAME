@@ -39,8 +39,11 @@ public class WW11_CactAss : MonoBehaviour
         {
             Win();
         }
+        if (hover && this.thisCactus != badBrain.GetComponent<WW11_badBrain>().choose && Input.GetMouseButtonDown(0))
+        {
+            Lose();
+        }
 
-        
         //if timer runout, Lose();
     }
 
@@ -50,6 +53,11 @@ public class WW11_CactAss : MonoBehaviour
         {
             hover = true;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        hover = false;
     }
 
     public void Win()

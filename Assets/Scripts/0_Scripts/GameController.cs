@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     [ReadOnly]
     [SerializeField]
     private bool microGameWin = false;
+    public Canvas canvas;
 
 
     private void Awake()
@@ -75,10 +76,16 @@ public class GameController : MonoBehaviour
         Debug.Log("The PLayer is Dead");
     }
 
+    public void GetCamera()
+    {
+        canvas.worldCamera = FindObjectOfType<Camera>();
+    }
+
     public void ReturnToMain(bool win)
     {
         microGameWin = win;
         SceneManager.LoadScene("0_BattleScene");
+        GetCamera();
         if(win == true) { StartCoroutine(playerWonMicro()); }
         else { StartCoroutine(playerLostMicro()); }
     }

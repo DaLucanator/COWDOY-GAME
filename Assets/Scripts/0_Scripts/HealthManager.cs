@@ -50,7 +50,7 @@ public class HealthManager : MonoBehaviour
             {
                 if(i == 0) { yield return ui_Flash.Flash(Color.cyan); }
                 playerHealth = playerMaxHealth;
-                yield return dialogueManager.TypeText(("The  player  regained  " + i.ToString() + "  health  and  reached  maximum  vitality"), "BATTLE  SCENE");
+                yield return dialogueManager.TypeText(("The  player  regained  " + i.ToString() + "  health  and  reached  maximum  vitality"));
                 yield return new WaitForSeconds(0.5f);
                 break;
             }
@@ -59,7 +59,7 @@ public class HealthManager : MonoBehaviour
             playerHealth++;
             dialogueManager.playerHealth.text = playerHealth.ToString();
             
-            if(i == healAmount) { yield return dialogueManager.TypeText(("The  player  regained  " + healAmount.ToString() + "  health"), "BATTLE  SCENE"); }
+            if(i == healAmount) { yield return dialogueManager.TypeText(("The  player  regained  " + healAmount.ToString() + "  health")); }
 
         }
         CheckHealth();
@@ -74,7 +74,7 @@ public class HealthManager : MonoBehaviour
 
             if (playerHealth <= 0)
             {
-                yield return dialogueManager.TypeText(("The  player  took  " + i.ToString() + "  damage and died"), "BATTLE  SCENE");
+                yield return dialogueManager.TypeText(("The  player  took  " + i.ToString() + "  damage and died"));
                 break;
             }
 
@@ -82,7 +82,7 @@ public class HealthManager : MonoBehaviour
             playerHealth--;
             dialogueManager.playerHealth.text = playerHealth.ToString();
 
-            if (i == damageAmount) { yield return dialogueManager.TypeText(("The  player  took  " + damageAmount.ToString() + "  damage"), "BATTLE  SCENE"); }
+            if (i == damageAmount) { yield return dialogueManager.TypeText(("The  player  took  " + damageAmount.ToString() + "  damage")); }
         }
 
         CheckHealth();

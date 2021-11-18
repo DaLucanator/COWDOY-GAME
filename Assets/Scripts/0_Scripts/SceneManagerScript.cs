@@ -7,7 +7,8 @@ public class SceneManagerScript : MonoBehaviour
 {
     public List<string> gamesToLoad;
     [SerializeField]
-    public List<string> gamesToNotLoad;
+    [ReadOnly]
+    List<string> gamesToNotLoad;
 
     [ReadOnly]
     public string gameToLoad;

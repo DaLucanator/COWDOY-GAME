@@ -29,11 +29,10 @@ public class DialogueManager : MonoBehaviour
         ui_Flash = GetComponent<UI_Flash>();
     }
 
-    public IEnumerator TypeText(string dialogueText, string dialogueLabelText)
+    public IEnumerator TypeText(string dialogueText)
     {
         buttons.SetActive(false);
 
-        dialogueLabel.text = dialogueLabelText;
         dialogue.text = "";
 
         foreach(char letter in dialogueText.ToCharArray())

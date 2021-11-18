@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 
-    //this is the top layer of the game controller. In concept anytime a main game "manager" script needed to talk to another it would do it through here.
+    //this is the top layer of the game controller. In concept anytime a main game "manager" script.
 
 {
     public static GameController current;
@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour
     [ReadOnly]
     [SerializeField]
     private SceneManagerScript sceneManager;
+    [ReadOnly]
+    [SerializeField]
+    private Timer timer;
     [ReadOnly]
     [SerializeField]
     private string microGameName;
@@ -40,6 +43,7 @@ public class GameController : MonoBehaviour
         dialogueManager = GetComponent<DialogueManager>();
         healthManager = GetComponent<HealthManager>();
         sceneManager = GetComponent<SceneManagerScript>();
+        timer = GetComponent<Timer>();
     }
 
     private void Start()
@@ -55,9 +59,9 @@ public class GameController : MonoBehaviour
     private IEnumerator TestRoutine()
     {
         sceneManager.pickMicrogame();
-        yield return dialogueManager.TypeText(" Welcome to the main scene", "BATTLE");
-        yield return dialogueManager.TypeText("battle scene functionality not yet implemented", "BATTLE");
-        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad.ToString(), "BATTLE");
+        yield return dialogueManager.TypeText(" Welcome to the main scene");
+        yield return dialogueManager.TypeText("battle scene functionality not yet implemented");
+        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad.ToString());
         sceneManager.loadMicroGame();
     }
 
@@ -86,27 +90,37 @@ public class GameController : MonoBehaviour
         microGameWin = win;
         SceneManager.LoadScene("0_BattleScene");
         GetCamera();
+        dialogueManager.dialogue.text = "BATTLE";
         if(win == true) { StartCoroutine(playerWonMicro()); }
         else { StartCoroutine(playerLostMicro()); }
+    }
+
+    public void MicroGameStart(float startTime, bool isWinTimer, string microGameName, string microGameInstruction)
+    {
+        dialogueManager.dialogueLabel.text = microGameName;
+        dialogueManager.dialogue.text = microGameInstruction;
+        timer.TimerStart(startTime, isWinTimer);
     }
 
     private IEnumerator playerWonMicro()
     {
         sceneManager.pickMicrogame();
-        yield return dialogueManager.TypeText("The Player won the microgame", "BATTLE");
-        yield return dialogueManager.TypeText("battle scene functionality not yet implemented", "BATTLE");
-        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad, "BATTLE");
+        yield return dialogueManager.TypeText("The Player won the microgame");
+        yield return dialogueManager.TypeText("battle scene functionality not yet implemented");
+        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad);
         sceneManager.loadMicroGame();
     }
 
     private IEnumerator playerLostMicro()
     {
         sceneManager.pickMicrogame();
-        yield return dialogueManager.TypeText("The Player lost the microgame", "BATTLE");
+        yield return dialogueManager.TypeText("The Player lost the microgame");
         yield return DamagePlayer(1);
-        yield return dialogueManager.TypeText("battle scene functionality not yet implemented", "BATTLE");
-        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad, "BATTLE");
+        yield return dialogueManager.TypeText("battle scene functionality not yet implemented");
+        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad);
         sceneManager.loadMicroGame();
     }
+
+
 
 }

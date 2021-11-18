@@ -309,6 +309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: uiAndCountdown
       objectReference: {fileID: 0}
+    - target: {fileID: 736660686436264693, guid: 0ee8b39f2547d0f4f8d8f574c53f65ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee8b39f2547d0f4f8d8f574c53f65ca, type: 3}
 --- !u!1 &789633136
@@ -896,6 +900,8 @@ GameObject:
   - component: {fileID: 2065770489}
   - component: {fileID: 2065770488}
   - component: {fileID: 2065770487}
+  - component: {fileID: 2065770491}
+  - component: {fileID: 2065770490}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -968,3 +974,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2065770490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065770486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 20
+  m_RefResolutionX: 320
+  m_RefResolutionY: 200
+  m_UpscaleRT: 0
+  m_PixelSnapping: 1
+  m_CropFrameX: 1
+  m_CropFrameY: 1
+  m_StretchFill: 0
+--- !u!114 &2065770491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065770486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbee5f3ec5c6bfe459150b56fe5f7f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

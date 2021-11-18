@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 12890749}
   - component: {fileID: 12890748}
   - component: {fileID: 12890747}
+  - component: {fileID: 12890751}
   m_Layer: 0
   m_Name: CowMan
   m_TagString: Untagged
@@ -218,6 +219,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &12890751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12890746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a06c6019d7a98849b159eda1cb2e2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theOtherGuy: {fileID: 1099894793}
+  health: 5
+  ID: 1
+  stance: 1
+  punchTimer: 0.2
+  hitting: 0
+  defending: 0
+  AIAttemptCheck: 0
+  ended: 0
+  Idle: {fileID: 2100000, guid: 1514290943514424c9066ebf81453ada, type: 2}
+  Attack: {fileID: 2100000, guid: 19668d5404c9e754389785e26d1be720, type: 2}
+  Defend: {fileID: 2100000, guid: efe56505cd47f75489d2f4ad4923a578, type: 2}
 --- !u!1 &402597697
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +338,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &698686325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 698686327}
+  - component: {fileID: 698686326}
+  m_Layer: 0
+  m_Name: FightController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &698686326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698686325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef7d18007a81944688c41bc5ceb68db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cowboyFighter: {fileID: 12890746}
+  otherFighter: {fileID: 1099894793}
+--- !u!4 &698686327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698686325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.158715, y: -0.9194824, z: -1.9962411}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1099894793
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +395,7 @@ GameObject:
   - component: {fileID: 1099894796}
   - component: {fileID: 1099894795}
   - component: {fileID: 1099894794}
+  - component: {fileID: 1099894798}
   m_Layer: 0
   m_Name: Bruh
   m_TagString: Untagged
@@ -408,6 +479,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1099894798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099894793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a06c6019d7a98849b159eda1cb2e2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theOtherGuy: {fileID: 12890746}
+  health: 5
+  ID: 2
+  stance: 1
+  punchTimer: 0.35
+  hitting: 0
+  defending: 0
+  AIAttemptCheck: 0
+  ended: 0
+  Idle: {fileID: 2100000, guid: 1514290943514424c9066ebf81453ada, type: 2}
+  Attack: {fileID: 2100000, guid: 19668d5404c9e754389785e26d1be720, type: 2}
+  Defend: {fileID: 2100000, guid: efe56505cd47f75489d2f4ad4923a578, type: 2}
 --- !u!1 &1130837451
 GameObject:
   m_ObjectHideFlags: 0

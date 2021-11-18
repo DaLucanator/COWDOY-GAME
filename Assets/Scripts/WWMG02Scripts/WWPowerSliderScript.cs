@@ -47,11 +47,13 @@ public class WWPowerSliderScript : MonoBehaviour
 
             if (powNum > 40 && powNum < 60)
             {
-                Win();
+                StartCoroutine(Win());
             }
             else
             {
                 Debug.Log("Lose");
+                GameController.current.ReturnToMain(false);
+
             }
         }
     }
@@ -74,9 +76,11 @@ public class WWPowerSliderScript : MonoBehaviour
         }
     }
 
-    void Win()
+    IEnumerator Win()
     {
         Debug.Log("Win");
+        yield return new WaitForSeconds(2f);
+
         GameController.current.ReturnToMain(true);
     }
 }

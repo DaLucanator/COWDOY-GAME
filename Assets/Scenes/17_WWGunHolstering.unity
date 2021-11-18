@@ -273,7 +273,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: uiAndCountdown
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 736660685567972517, guid: 0ee8b39f2547d0f4f8d8f574c53f65ca, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 736660686447458908, guid: 0ee8b39f2547d0f4f8d8f574c53f65ca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ee8b39f2547d0f4f8d8f574c53f65ca, type: 3}
 --- !u!1 &436197374
 GameObject:

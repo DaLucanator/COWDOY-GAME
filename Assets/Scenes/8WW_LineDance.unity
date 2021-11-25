@@ -570,10 +570,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bustaMove: {fileID: 605170797}
-  poseLeft: {fileID: 2100000, guid: 67e0a7dac8275164bae52ed00de7ef10, type: 2}
-  poseUp: {fileID: 2100000, guid: c283640f77ac0f049af8925c40f3eec6, type: 2}
-  poseRight: {fileID: 2100000, guid: 8d64941e1a8f4a049b9c7f7dbc5edda0, type: 2}
-  poseDown: {fileID: 2100000, guid: a91abb44ff6b6be42b58aa1a48d9367c, type: 2}
+  poseLeft: {fileID: 2100000, guid: 8d64941e1a8f4a049b9c7f7dbc5edda0, type: 2}
+  poseUp: {fileID: 2100000, guid: a91abb44ff6b6be42b58aa1a48d9367c, type: 2}
+  poseRight: {fileID: 2100000, guid: 67e0a7dac8275164bae52ed00de7ef10, type: 2}
+  poseDown: {fileID: 2100000, guid: c283640f77ac0f049af8925c40f3eec6, type: 2}
   positionChoice: 0
 --- !u!65 &682418963
 BoxCollider:
@@ -797,10 +797,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bustaMove: {fileID: 1870631612}
-  poseLeft: {fileID: 2100000, guid: 67e0a7dac8275164bae52ed00de7ef10, type: 2}
-  poseUp: {fileID: 2100000, guid: c283640f77ac0f049af8925c40f3eec6, type: 2}
-  poseRight: {fileID: 2100000, guid: 8d64941e1a8f4a049b9c7f7dbc5edda0, type: 2}
-  poseDown: {fileID: 2100000, guid: a91abb44ff6b6be42b58aa1a48d9367c, type: 2}
+  poseLeft: {fileID: 2100000, guid: 8d64941e1a8f4a049b9c7f7dbc5edda0, type: 2}
+  poseUp: {fileID: 2100000, guid: a91abb44ff6b6be42b58aa1a48d9367c, type: 2}
+  poseRight: {fileID: 2100000, guid: 67e0a7dac8275164bae52ed00de7ef10, type: 2}
+  poseDown: {fileID: 2100000, guid: c283640f77ac0f049af8925c40f3eec6, type: 2}
   positionChoice: 0
 --- !u!65 &1015736702
 BoxCollider:
@@ -1033,10 +1033,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bustaMove: {fileID: 825553525}
-  poseLeft: {fileID: 2100000, guid: 67e0a7dac8275164bae52ed00de7ef10, type: 2}
-  poseUp: {fileID: 2100000, guid: c283640f77ac0f049af8925c40f3eec6, type: 2}
-  poseRight: {fileID: 2100000, guid: 8d64941e1a8f4a049b9c7f7dbc5edda0, type: 2}
-  poseDown: {fileID: 2100000, guid: a91abb44ff6b6be42b58aa1a48d9367c, type: 2}
+  poseLeft: {fileID: 2100000, guid: 8d64941e1a8f4a049b9c7f7dbc5edda0, type: 2}
+  poseUp: {fileID: 2100000, guid: a91abb44ff6b6be42b58aa1a48d9367c, type: 2}
+  poseRight: {fileID: 2100000, guid: 67e0a7dac8275164bae52ed00de7ef10, type: 2}
+  poseDown: {fileID: 2100000, guid: c283640f77ac0f049af8925c40f3eec6, type: 2}
   positionChoice: 0
 --- !u!65 &1467921642
 BoxCollider:
@@ -1147,10 +1147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bustaMove: {fileID: 507427640}
-  poseLeft: {fileID: 2100000, guid: 67e0a7dac8275164bae52ed00de7ef10, type: 2}
-  poseUp: {fileID: 2100000, guid: c283640f77ac0f049af8925c40f3eec6, type: 2}
-  poseRight: {fileID: 2100000, guid: 8d64941e1a8f4a049b9c7f7dbc5edda0, type: 2}
-  poseDown: {fileID: 2100000, guid: a91abb44ff6b6be42b58aa1a48d9367c, type: 2}
+  poseLeft: {fileID: 2100000, guid: 8d64941e1a8f4a049b9c7f7dbc5edda0, type: 2}
+  poseUp: {fileID: 2100000, guid: a91abb44ff6b6be42b58aa1a48d9367c, type: 2}
+  poseRight: {fileID: 2100000, guid: 67e0a7dac8275164bae52ed00de7ef10, type: 2}
+  poseDown: {fileID: 2100000, guid: c283640f77ac0f049af8925c40f3eec6, type: 2}
   positionChoice: 0
 --- !u!65 &1651499946
 BoxCollider:

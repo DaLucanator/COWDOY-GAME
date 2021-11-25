@@ -50,7 +50,7 @@ public class WW21TrainBrain : MonoBehaviour
                 }
             }
         }
-        else
+        if (!aiCheck)
         {
             if (stepCount < maxStep)
             {

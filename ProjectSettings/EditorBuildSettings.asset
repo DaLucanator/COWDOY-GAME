@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/19WW_SlidingDrinks.unity
     guid: 99f44d270ea1f1d4aa5513baf9fdff9f
   - enabled: 0
-    path: Assets/Scenes/21_WWCatchThatTrain.unity
+    path: Assets/Scenes/14WW_HorseRace.unity
     guid: 07ec968631d6fc141a447c9031e6663e
   - enabled: 0
     path: Assets/Scenes/23_CellEscape.unity

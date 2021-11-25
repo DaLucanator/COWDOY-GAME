@@ -9,12 +9,17 @@ public class WW21TrainBrain : MonoBehaviour
     public GameObject spinny;
     public float randx;
     public float randy;
+    public float waid;
     public int stepCount;
     public int maxStep;
+    public bool aiCheck;
+    public bool takeStep = true;
+    public bool canWin;
+    public bool ended;
     // Start is called before the first frame update
     void Start()
     {
-
+        takeStep = true;
     }
 
     // Update is called once per frame
@@ -23,20 +28,73 @@ public class WW21TrainBrain : MonoBehaviour
         randx = spinny.transform.position.x;
         randy = spinny.transform.position.y;
         this.transform.position = new Vector3(randx, randy, -1.72f);
-
-        if (stepCount < maxStep)
+        if (aiCheck)
         {
-            if (Input.anyKeyDown)
+            if (stepCount < maxStep)
             {
-                stepCount++;
+                if (takeStep)
+                {
+                    takeStep = false;
+                    StartCoroutine(StepTime());
 
-
-                thePlayerThemself.transform.position = Vector3.Lerp(thePlayerThemself.transform.position, moveto.transform.position, 0.02f);
+                }
             }
+            else
+            {
+                if (!ended)
+                {
+                    ended = true;
+
+                    Debug.Log("Lose");
+                    GameController.current.ReturnToMain(false);
+                }
+            }
+        }
+        if (!aiCheck)
+        {
+            if (stepCount < maxStep)
+            {
+                if (Input.anyKeyDown)
+                {
+                    stepCount++;
+
+
+                    thePlayerThemself.transform.position = Vector3.Lerp(thePlayerThemself.transform.position, moveto.transform.position, 0.02f);
+                }
+            }
+            else
+            {
+                if (!ended)
+                {
+                    ended = true;
+
+                    Debug.Log("Win!");
+                    GameController.current.ReturnToMain(true);
+                }
+            }
+        }
+    }
+
+    public IEnumerator StepTime()
+    {
+        stepCount++;
+        thePlayerThemself.transform.position = Vector3.Lerp(thePlayerThemself.transform.position, moveto.transform.position, 0.08f);
+        if (canWin)
+        {
+            waid = (Random.Range(1f, 100f) * 0.01f);
+            yield return new WaitForSeconds(waid);
         }
         else
         {
-            thePlayerThemself.GetComponent<Rigidbody>().useGravity = true;
+            waid = (Random.Range(60f, 200f) * 0.01f);
+
+            yield return new WaitForSeconds(waid);
         }
+
+
+        takeStep = true;
+
     }
+
+
 }

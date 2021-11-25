@@ -11,6 +11,9 @@ TagManager:
   - WW24Mouse
   - WW24Pen
   - Cactus
+  - damageLow
+  - damageMed
+  - damageHigh
   layers:
   - Default
   - TransparentFX

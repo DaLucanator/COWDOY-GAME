@@ -18,8 +18,10 @@ public class WWPowerSliderScript : MonoBehaviour
     public bool sliderIsMoving;
     void Start()
     {
+
         sliderIsMoving = true;
         StartCoroutine(timing());
+
     }
 
     // Update is called once per frame
@@ -56,14 +58,15 @@ public class WWPowerSliderScript : MonoBehaviour
 
             }
         }
+
+
+        
     }
 
     IEnumerator timing()
     {
         while (sliderIsMoving)
         {
-
-
             if (goingUp)
             {
                 powNum++;
@@ -72,6 +75,7 @@ public class WWPowerSliderScript : MonoBehaviour
             {
                 powNum--;
             }
+
             yield return new WaitForSeconds((speed) * 0.001f);
         }
     }

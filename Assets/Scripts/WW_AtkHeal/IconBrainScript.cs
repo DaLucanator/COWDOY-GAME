@@ -35,15 +35,12 @@ public class IconBrainScript : MonoBehaviour
             goingUp = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.anyKeyDown)
         {
             sliderIsMoving = false;
             DamCheck();
         }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            StartCoroutine(timing());
-        }
+
     }
 
     IEnumerator timing()

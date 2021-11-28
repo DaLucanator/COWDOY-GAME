@@ -17,16 +17,31 @@ public class DialogueManager : MonoBehaviour
     private GameObject buttons;
 
     [SerializeField]
+    private GameObject continueImage;
+
+    [SerializeField]
     private float typeDelay;
 
-    private void Start()
-    {
-        dialogue.text = "";
-    }
+    private bool continueBool = false;
+    private bool continueCheck = false;
 
     private void Awake()
     {
         ui_Flash = GetComponent<UI_Flash>();
+        continueImage.SetActive(false);
+        dialogue.text = "";
+    }
+
+    private void Update()
+    {
+        if (continueCheck)
+        {
+            if (Input.anyKeyDown)
+            {
+                continueBool = true;
+                continueCheck = false;
+            }
+        }
     }
 
     public IEnumerator TypeText(string dialogueText)
@@ -40,8 +55,12 @@ public class DialogueManager : MonoBehaviour
             dialogue.text += letter;
             yield return new WaitForSecondsRealtime(typeDelay);
         }
-
-        yield return new WaitForSeconds(1f);
+        continueCheck = true;
+        continueImage.SetActive(true);
+        yield return new WaitUntil(() => continueBool == true);
+        continueBool = false;
+        continueCheck = false;
+        continueImage.SetActive(false);
     }
 
     public void LoadButtons()

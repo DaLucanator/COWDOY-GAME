@@ -7,17 +7,35 @@ public class Timer : MonoBehaviour
 {
     float startTimeLocal;
     bool isWinTimerLocal = false;
-    public TextMeshProUGUI timerText;
     float currentTime;
-    bool timerGo = false;
     int displayTime;
+
+    [SerializeField]
+    GameObject timerTextObject;
+    [SerializeField]
+    TextMeshProUGUI timerText;
+
+    [ReadOnly]
+    public bool timerGo = false;
+
+    public void Start()
+    {
+        timerTextObject.SetActive(false);
+    }
 
     public void TimerStart(float startTime, bool isWinTimer)
     {
         startTimeLocal = startTime;
+        timerTextObject.SetActive(true);
         isWinTimerLocal = isWinTimer;
         currentTime = startTimeLocal;
         timerGo = true;
+    }
+
+    public void TimerStop()
+    {
+        timerGo = false;
+        timerTextObject.SetActive(false);
     }
 
     void Update()
@@ -33,7 +51,7 @@ public class Timer : MonoBehaviour
                 GameController.current.ReturnToMain(isWinTimerLocal);
             }
         }
-        if (displayTime >= 10) { timerText.text = "TIME REMAINING: " + displayTime.ToString(); }
-        else { timerText.text = "TIME REMAINING: 0" + displayTime.ToString(); }
+        if (displayTime >= 10) { timerText.text = "COUNTDOWN: " + displayTime.ToString(); }
+        else { timerText.text = "COUNTDOWN: 0" + displayTime.ToString(); }
     }
 }

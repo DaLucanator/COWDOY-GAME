@@ -87,6 +87,7 @@ public class GameController : MonoBehaviour
 
     public void ReturnToMain(bool win)
     {
+        timer.TimerStop();
         microGameWin = win;
         SceneManager.LoadScene("0_BattleScene");
         GetCamera();

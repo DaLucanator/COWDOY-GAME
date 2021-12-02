@@ -13,6 +13,7 @@ public class SceneManagerScript : MonoBehaviour
     [ReadOnly]
     public string gameToLoad;
 
+
     public void pickMicrogame()
     {
         if(gamesToLoad.Count == 0)

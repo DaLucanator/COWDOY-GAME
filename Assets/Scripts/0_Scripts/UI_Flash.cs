@@ -7,13 +7,17 @@ public class UI_Flash : MonoBehaviour
     [ReadOnly]
     [SerializeField]
     private DialogueManager dialogueManager;
+    [ReadOnly]
+    [SerializeField]
+    private HealthManager healthManager;
 
     [ReadOnly]
-    public bool constantFlash = false;
+    public bool constantFlashLowHealth = false, constantFlashDamageEnemy = false;
 
     private void Awake()
     {
         dialogueManager = GetComponent<DialogueManager>();
+        healthManager = GetComponent<HealthManager>();
     }
 
     private void Start()
@@ -21,19 +25,31 @@ public class UI_Flash : MonoBehaviour
         Canvas.GetDefaultCanvasMaterial().color = Color.white;
     }
 
-    //UI Flashing for feedback when player health value changes
-    public IEnumerator Flash(Color flashColor)
+    //UI "Flash" for feedback when damage is taken
+    public IEnumerator Flash(Color flashColor, string target)
     {
-        dialogueManager.playerHealth.color = flashColor;
-        yield return new WaitForSeconds(0.1f);
-        dialogueManager.playerHealth.color = Color.white;
-        yield return new WaitForSeconds(0.1f);
+        if(target == "player")
+        {
+            dialogueManager.playerHealth.color = flashColor;
+            yield return new WaitForSeconds(0.5f);
+            dialogueManager.playerHealth.color = Color.white;
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        if (target == "enemy")
+        {
+            healthManager.healthBarSprite.color = flashColor;
+            yield return new WaitForSeconds(0.5f);
+            healthManager.healthBarSprite.color = Color.white;
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
-    //UI flashing for low health status
-    public IEnumerator ConstantFlash()
+
+    //Constant version of health flashing
+    public IEnumerator ConstantFlash(string mode)
     {
-        while(constantFlash)
+        while(constantFlashLowHealth && mode == "lowHealth")
         {
             Canvas.GetDefaultCanvasMaterial().color = Color.red;
             dialogueManager.dialogue.color = Color.red;
@@ -42,6 +58,14 @@ public class UI_Flash : MonoBehaviour
             Canvas.GetDefaultCanvasMaterial().color = Color.white;
             dialogueManager.dialogue.color = Color.white;
             dialogueManager.playerHealth.color = Color.white;
+            yield return new WaitForSecondsRealtime(0.5f);
+        }
+
+        while (constantFlashDamageEnemy && mode == "damageEnemy")
+        {
+            healthManager.damageBarSprite.color = Color.red;
+            yield return new WaitForSecondsRealtime(0.5f);
+            healthManager.damageBarSprite.color = Color.black;
             yield return new WaitForSecondsRealtime(0.5f);
         }
     }

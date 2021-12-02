@@ -28,6 +28,9 @@ public class GameController : MonoBehaviour
     [ReadOnly]
     [SerializeField]
     private bool microGameWin = false;
+    [ReadOnly]
+    [SerializeField]
+    private bool inMainScene = true;
     public Canvas canvas;
 
 
@@ -48,7 +51,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        Test();
+        //Test();
     }
 
     private void Test()
@@ -61,7 +64,6 @@ public class GameController : MonoBehaviour
         sceneManager.pickMicrogame();
         yield return dialogueManager.TypeText(" Welcome to the main scene");
         yield return dialogueManager.TypeText("battle scene functionality not yet implemented");
-        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad.ToString());
         sceneManager.loadMicroGame();
     }
 
@@ -73,6 +75,20 @@ public class GameController : MonoBehaviour
     public IEnumerator DamagePlayer(int damageAmount)
     {
         yield return healthManager.DamagePlayer(damageAmount);
+    }
+
+    public void DamageEnemyButton()
+    {
+        //shoot microgame goes here
+        StartCoroutine(DamageEnemy(1));
+    }
+
+    public IEnumerator DamageEnemy(int damageAmount)
+    {
+        sceneManager.pickMicrogame();
+        yield return healthManager.DamageEnemy(damageAmount);
+        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad.ToString());
+        sceneManager.loadMicroGame();
     }
 
     public void KillPLayer()

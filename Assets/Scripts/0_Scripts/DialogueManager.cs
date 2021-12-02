@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogue, dialogueLabel, playerHealth;
 
     [SerializeField]
-    private GameObject buttons;
+    private GameObject buttons, dialogueObject;
 
     [SerializeField]
     private GameObject continueImage;
@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour
         ui_Flash = GetComponent<UI_Flash>();
         continueImage.SetActive(false);
         dialogue.text = "";
+        dialogueObject.SetActive(false);
     }
 
     private void Update()
@@ -47,6 +48,7 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator TypeText(string dialogueText)
     {
         buttons.SetActive(false);
+        dialogueObject.SetActive(true);
 
         dialogue.text = "";
 
@@ -66,6 +68,7 @@ public class DialogueManager : MonoBehaviour
     public void LoadButtons()
     {
         dialogue.text = "";
+        dialogueObject.SetActive(false);
         buttons.SetActive(true);
     }
 

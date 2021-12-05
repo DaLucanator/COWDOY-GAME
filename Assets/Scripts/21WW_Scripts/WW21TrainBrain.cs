@@ -59,7 +59,7 @@ public class WW21TrainBrain : MonoBehaviour
                     stepCount++;
 
 
-                    thePlayerThemself.transform.position = Vector3.Lerp(thePlayerThemself.transform.position, moveto.transform.position, 0.02f);
+                    thePlayerThemself.transform.position = Vector3.Lerp(thePlayerThemself.transform.position, moveto.transform.position, 0.04f);
                 }
             }
             else

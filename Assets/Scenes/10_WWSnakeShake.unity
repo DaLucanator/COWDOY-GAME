@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de6b102dabb45e44bb64eef2852a185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  train: {fileID: 0}
 --- !u!54 &1050583711
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1185,7 +1186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 736660686447458908, guid: 0ee8b39f2547d0f4f8d8f574c53f65ca, type: 3}
       propertyPath: startTime
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee8b39f2547d0f4f8d8f574c53f65ca, type: 3}

@@ -1573,13 +1573,14 @@ MonoBehaviour:
   enemyHealth: 0
   playerMaxHealth: 10
   enemyMaxHealth: 10
-  playerInitialHealth: 2
+  playerInitialHealth: 10
   enemyInitialHealth: 10
   playerHealthLow: 3
   healthBar: {fileID: 955739793}
   damageBar: {fileID: 1190329797}
   damageBarSprite: {fileID: 0}
   healthBarSprite: {fileID: 0}
+  healthBarFrame: {fileID: 2031506787}
 --- !u!4 &1574067595
 Transform:
   m_ObjectHideFlags: 0
@@ -1610,10 +1611,12 @@ MonoBehaviour:
   healthManager: {fileID: 0}
   sceneManager: {fileID: 0}
   timer: {fileID: 0}
-  microGameName: 
   microGameWin: 0
   inMainScene: 1
+  cursor: {fileID: 2800000, guid: 568c2b5e7a9aca74298b16e6367a51dd, type: 3}
+  crosshair: {fileID: 2800000, guid: 48785915b16d13943b6dbafb69313e8f, type: 3}
   canvas: {fileID: 1345579799}
+  sceneData: {fileID: 0}
 --- !u!114 &1574067597
 MonoBehaviour:
   m_ObjectHideFlags: 0

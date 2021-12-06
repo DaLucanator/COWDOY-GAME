@@ -8,8 +8,7 @@ public class WW11_CactAss : MonoBehaviour
     public int thisCactus;
     public bool hover;
     public bool click;
-    public Material m1;
-    public Material m2;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +21,7 @@ public class WW11_CactAss : MonoBehaviour
     {
         if (this.thisCactus == badBrain.GetComponent<WW11_badBrain>().choose)
         {
-            this.GetComponent<Renderer>().material = m2;
-        }
-        else
-        {
-            this.GetComponent<Renderer>().material = m1;
-
+            this.GetComponent<Animator>().enabled = true;
         }
 
 

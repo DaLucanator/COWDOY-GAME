@@ -22,6 +22,7 @@ public class SceneManagerScript : MonoBehaviour
             gamesToNotLoad.Clear();
         }
         gameToLoad = gamesToLoad[Random.Range(0, gamesToLoad.Count-1)];
+        GameController.current.sceneData = Resources.Load(gameToLoad) as SceneData;
         gamesToNotLoad.Add(gameToLoad);
         gamesToLoad.Remove(gameToLoad);
     }
@@ -29,5 +30,6 @@ public class SceneManagerScript : MonoBehaviour
     public void loadMicroGame()
     {
         SceneManager.LoadScene(gameToLoad);
+        GameController.current.StartMicroGame();
     }
 }

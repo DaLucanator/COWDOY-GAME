@@ -5702,8 +5702,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4441780544813107758, guid: 3bad7c61d99a65a4cbc9bcd59bd3d11a, type: 3}
+      propertyPath: cursorMode
+      value: off
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441780544813107758, guid: 3bad7c61d99a65a4cbc9bcd59bd3d11a, type: 3}
       propertyPath: microGameName
-      value: Dustbowl
+      value: Snake Pit
       objectReference: {fileID: 0}
     - target: {fileID: 4441780544813107758, guid: 3bad7c61d99a65a4cbc9bcd59bd3d11a, type: 3}
       propertyPath: microGameInstruction

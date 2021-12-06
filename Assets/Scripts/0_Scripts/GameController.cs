@@ -24,14 +24,14 @@ public class GameController : MonoBehaviour
     private Timer timer;
     [ReadOnly]
     [SerializeField]
-    private string microGameName;
-    [ReadOnly]
-    [SerializeField]
     private bool microGameWin = false;
     [ReadOnly]
     [SerializeField]
     private bool inMainScene = true;
+
     public Canvas canvas;
+    public Texture2D cursor, crosshair;
+    public SceneData sceneData;
 
 
     private void Awake()
@@ -104,6 +104,7 @@ public class GameController : MonoBehaviour
     public void ReturnToMain(bool win)
     {
         timer.TimerStop();
+        SetCursor("cursor");
         microGameWin = win;
         SceneManager.LoadScene("0_BattleScene");
         GetCamera();
@@ -112,11 +113,12 @@ public class GameController : MonoBehaviour
         else { StartCoroutine(playerLostMicro()); }
     }
 
-    public void MicroGameStart(float startTime, bool isWinTimer, string microGameName, string microGameInstruction)
+    public void StartMicroGame()
     {
-        dialogueManager.dialogueLabel.text = microGameName;
-        dialogueManager.dialogue.text = microGameInstruction;
-        timer.TimerStart(startTime, isWinTimer);
+        SetCursor(sceneData.cursorMode);
+        dialogueManager.dialogueLabel.text = sceneData.microGameName;
+        dialogueManager.dialogue.text = sceneData.microGameInstruction;
+        timer.TimerStart(sceneData.startTime, sceneData.isWinTimer);
     }
 
     private IEnumerator playerWonMicro()
@@ -124,7 +126,7 @@ public class GameController : MonoBehaviour
         sceneManager.pickMicrogame();
         yield return dialogueManager.TypeText("The Player won the microgame");
         yield return dialogueManager.TypeText("battle scene functionality not yet implemented");
-        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad);
+        yield return dialogueManager.TypeText("Loading microgame " + sceneData.microGameName);
         sceneManager.loadMicroGame();
     }
 
@@ -134,10 +136,22 @@ public class GameController : MonoBehaviour
         yield return dialogueManager.TypeText("The Player lost the microgame");
         yield return DamagePlayer(1);
         yield return dialogueManager.TypeText("battle scene functionality not yet implemented");
-        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad);
+        yield return dialogueManager.TypeText("Loading microgame " + sceneData.microGameName);
         sceneManager.loadMicroGame();
     }
 
+    private void SetCursor(string cursorMode)
+    {
+        Vector2 cursorVector = new Vector2(0, 0); ;
+        Texture2D cursorTex = cursor;
+        if (cursorMode == "crosshair")
+        {
+            cursorVector = new Vector2(16, 16);
+            cursorTex = crosshair;
+        }
+        if(cursorMode == "off") { Cursor.visible = false; }
+        Cursor.SetCursor(cursorTex, cursorVector, CursorMode.Auto);
+    }
 
 
 }

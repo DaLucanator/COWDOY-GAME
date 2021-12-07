@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dce742609763f7c41ae9eea6a73a5787, type: 3}
-  m_Name: 10_WWSnakeShake
+  m_Name: 8WW_LineDance
   m_EditorClassIdentifier: 
-  startTime: 15
+  startTime: 5
   isWinTimer: 0
   cursorMode: off
-  microGameName: SNAKE SHAKE
-  microGameInstruction: 'Mash the keys.
+  microGameName: LINE DANCE REVOLUTION 1835
+  microGameInstruction: 'Arrowkey Movement
 
-    Shake the snake from the boot!'
+    Follow the Prompt!'

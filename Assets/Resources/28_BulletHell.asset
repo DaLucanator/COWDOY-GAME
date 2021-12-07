@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 28_BulletHell
   m_EditorClassIdentifier: 
   startTime: 10
-  isWinTimer: 0
+  isWinTimer: 1
   cursorMode: off
-  microGameName: Bison Hell
-  microGameInstruction: Arrow Keys to Move. Dodge the incoming Bison
+  microGameName: BISON HELL
+  microGameInstruction: Arrow Keys to Move. Dodge the incoming Bison!

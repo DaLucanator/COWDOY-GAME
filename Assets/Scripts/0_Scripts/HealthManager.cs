@@ -24,6 +24,8 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     public SpriteRenderer damageBarSprite,healthBarSprite;
 
+    public SpriteRenderer healthBarFrame;
+
 
     private void Awake()
     {
@@ -111,7 +113,6 @@ public class HealthManager : MonoBehaviour
                 ui_Flash.constantFlashDamageEnemy = true;
                 StartCoroutine(ui_Flash.ConstantFlash("damageEnemy"));
                 yield return dialogueManager.TypeText(("The  Stranger  took  " + damageAmount.ToString() + "  damage"));
-                damageBarSprite.color = Color.white;
                 ui_Flash.constantFlashDamageEnemy = false;
             }
         }
@@ -131,8 +132,8 @@ public class HealthManager : MonoBehaviour
 
     private void DamageBarEffect(int damageAmount)
     {
-        Vector3 scale = new Vector3(damageAmount, 20, 20);
-        Vector3 pos = new Vector3(18 - ((enemyMaxHealth - enemyHealth) * 8), 84, -1);
+        Vector3 scale = new Vector3((20 / enemyMaxHealth) * damageAmount, 20, 20);
+        Vector3 pos = new Vector3(10 - (enemyMaxHealth * 0.4f), 84, -1);
         damageBar.transform.localScale = scale;
         damageBar.transform.localPosition = pos;
     }

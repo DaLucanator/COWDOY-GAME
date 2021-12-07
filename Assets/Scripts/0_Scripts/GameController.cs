@@ -28,9 +28,10 @@ public class GameController : MonoBehaviour
     [ReadOnly]
     [SerializeField]
     private bool inMainScene = true;
+    [SerializeField]
+    private Texture2D cursor, crosshair;
 
     public Canvas canvas;
-    public Texture2D cursor, crosshair;
     public SceneData sceneData;
 
 

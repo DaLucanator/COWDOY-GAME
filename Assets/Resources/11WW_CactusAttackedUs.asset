@@ -15,5 +15,5 @@ MonoBehaviour:
   startTime: 3
   isWinTimer: 0
   cursorMode: crosshair
-  microGameName: Cactus Attacked Us!
-  microGameInstruction: Mouse to aim. Shoot the bandit before he shoots you.
+  microGameName: CACTUS ATTACKED US!
+  microGameInstruction: Mouse to aim. Shoot the bandit!

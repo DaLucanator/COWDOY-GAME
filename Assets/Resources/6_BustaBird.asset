@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dce742609763f7c41ae9eea6a73a5787, type: 3}
-  m_Name: 10_WWSnakeShake
+  m_Name: 6_BustaBird
   m_EditorClassIdentifier: 
-  startTime: 5
+  startTime: 9
   isWinTimer: 0
-  cursorMode: off
-  microGameName: SNAKE SHAKE
-  microGameInstruction: Mash the keys. Shake the snake from the boot!
+  cursorMode: crosshair
+  microGameName: DESERT EAGLE
+  microGameInstruction: Mouse to aim. Shoot the birds!

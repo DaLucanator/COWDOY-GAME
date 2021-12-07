@@ -38,9 +38,13 @@ public class UI_Flash : MonoBehaviour
 
         if (target == "enemy")
         {
+            healthManager.healthBarFrame.color = flashColor;
             healthManager.healthBarSprite.color = flashColor;
+            healthManager.damageBarSprite.color = flashColor;
             yield return new WaitForSeconds(0.5f);
+            healthManager.healthBarFrame.color = Color.white;
             healthManager.healthBarSprite.color = Color.white;
+            healthManager.damageBarSprite.color = Color.white;
             yield return new WaitForSeconds(0.5f);
         }
     }

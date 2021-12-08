@@ -5,7 +5,6 @@ using UnityEngine;
 public class DB7_Bullet : MonoBehaviour
 {
     private Rigidbody2D rigidbody;
-
     public float lifetime = 10f;
     public float speed = 300f;
 

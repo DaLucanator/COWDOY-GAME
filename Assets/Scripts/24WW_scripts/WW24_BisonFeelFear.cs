@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WW24_BisonFeelFear : MonoBehaviour
 {
+    public AudioManager audioManager;
     public GameObject stats;
     public float speed;
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class WW24_BisonFeelFear : MonoBehaviour
         }
         if (other.tag == "WW24Pen")
         {
+            audioManager.PlayAuMenuAccept();
             Destroy(this.gameObject);
             stats.GetComponent<WW24_GameInformation>().upCollected();
         }

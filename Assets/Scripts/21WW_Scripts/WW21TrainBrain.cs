@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WW21TrainBrain : MonoBehaviour
 {
+    public AudioManager audioManager;
+
     public GameObject thePlayerThemself;
     public GameObject moveto;
     public GameObject spinny;
@@ -44,7 +46,7 @@ public class WW21TrainBrain : MonoBehaviour
                 if (!ended)
                 {
                     ended = true;
-
+                    audioManager.PlayAuGameFail();
                     Debug.Log("Lose");
                     GameController.current.ReturnToMain(false);
                 }
@@ -56,8 +58,8 @@ public class WW21TrainBrain : MonoBehaviour
             {
                 if (Input.anyKeyDown)
                 {
+                    audioManager.PlayAuMenuText();
                     stepCount++;
-
 
                     thePlayerThemself.transform.position = Vector3.Lerp(thePlayerThemself.transform.position, moveto.transform.position, 0.02f);
                 }
@@ -67,7 +69,7 @@ public class WW21TrainBrain : MonoBehaviour
                 if (!ended)
                 {
                     ended = true;
-
+                    audioManager.PlayAuGameShootHit();
                     Debug.Log("Win!");
                     GameController.current.ReturnToMain(true);
                 }

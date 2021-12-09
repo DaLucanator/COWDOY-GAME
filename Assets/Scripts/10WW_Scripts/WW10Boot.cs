@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WW10Boot : MonoBehaviour
 {
+    public AudioManager audioManager;
+
     public GameObject Snape;
     public GameObject moveto;
     public Vector3 bootPosition;
@@ -25,6 +27,7 @@ public class WW10Boot : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
+                audioManager.PlayAuMenuText();
                 shakeCount++;
                 randx = Random.Range(0.25f, 0.75f);
                 randy = Random.Range(1.75f, 2.25f);

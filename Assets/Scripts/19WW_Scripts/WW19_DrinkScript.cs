@@ -5,9 +5,10 @@ using UnityEngine;
 public class WW19_DrinkScript : MonoBehaviour
 {
     public GameObject glass;
-    public AudioSource smash;
-    public AudioClip smashSound;
-    public AudioClip winSound;
+    public AudioManager audioManager;
+    //public AudioSource smash;
+    //public AudioClip smashSound;
+    //public AudioClip winSound;
     public float delayTime;
     public float moveSpeed;
     public bool overlap;
@@ -16,7 +17,7 @@ public class WW19_DrinkScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        smash = this.GetComponent<AudioSource>();
+        //smash = this.GetComponent<AudioSource>();
         delayTime = Random.Range(10, 30);
         delayTime = delayTime / 10;
         moveSpeed = (Random.Range(80, 180)) * 0.1f;
@@ -31,7 +32,7 @@ public class WW19_DrinkScript : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 move = false;
-
+                audioManager.PlayAuMenuAccept();
                 Win();
             }
         }
@@ -49,7 +50,7 @@ public class WW19_DrinkScript : MonoBehaviour
         }
         if (other.tag == "BreaksGlass")
         {
-
+            audioManager.PlayAuGameFail();
             Lose();
             //Play smashing glass noise
             //lose()
@@ -77,14 +78,14 @@ public class WW19_DrinkScript : MonoBehaviour
 
         move = false;
 
-        GameController.current.ReturnToMain(false);
+        //GameController.current.ReturnToMain(false);
         //Add loss.jpg
     }
 
     IEnumerator quickMafs()
     {
         yield return new WaitForSeconds(delayTime);
-
+        audioManager.PlayAuGameShoot();
         move = true;
     }
 }

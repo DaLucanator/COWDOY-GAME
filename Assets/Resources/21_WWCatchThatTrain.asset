@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce742609763f7c41ae9eea6a73a5787, type: 3}
   m_Name: 21_WWCatchThatTrain
   m_EditorClassIdentifier: 
-  startTime: 0
+  startTime: 10
   isWinTimer: 0
-  cursorMode: 
+  cursorMode: off
   microGameName: ROOTIN TOOT TOOTIN
   microGameInstruction: Mash the keys. Catch the train!

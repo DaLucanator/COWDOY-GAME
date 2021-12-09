@@ -30,9 +30,14 @@ public class GameController : MonoBehaviour
     private bool inMainScene = true;
     [SerializeField]
     private Texture2D cursor, crosshair;
+    [SerializeField]
+    private GameObject[] stuffToDisable;
 
     public Canvas canvas;
     public SceneData sceneData;
+
+    [ReadOnly]
+    public int healAmount, damageAmount;
 
 
     private void Awake()
@@ -50,27 +55,11 @@ public class GameController : MonoBehaviour
         timer = GetComponent<Timer>();
     }
 
-    private void Start()
-    {
-        //Test();
-    }
-
-    private void Test()
-    {
-        StartCoroutine(TestRoutine());
-    }
-
-    private IEnumerator TestRoutine()
-    {
-        sceneManager.pickMicrogame();
-        yield return dialogueManager.TypeText(" Welcome to the main scene");
-        yield return dialogueManager.TypeText("battle scene functionality not yet implemented");
-        sceneManager.loadMicroGame();
-    }
-
     public IEnumerator HealPlayer(int healAmount)
     {
+        sceneManager.pickMicrogame();
         yield return healthManager.HealPlayer(healAmount);
+        yield return LoadMicro();
     }
 
     public IEnumerator DamagePlayer(int damageAmount)
@@ -78,22 +67,30 @@ public class GameController : MonoBehaviour
         yield return healthManager.DamagePlayer(damageAmount);
     }
 
-    public void DamageEnemyButton()
+    public void ShootButton()
     {
-        //shoot microgame goes here
-        StartCoroutine(DamageEnemy(1));
+        sceneData = Resources.Load("WW_AttackTemp") as SceneData;
+        sceneManager.gameToLoad = "WW_AttackTemp";
+        StartCoroutine(LoadMicro());
+    }
+
+    public void HealButton()
+    {
+        sceneData = Resources.Load("WW_HealTemp") as SceneData;
+        sceneManager.gameToLoad = "WW_HealTemp";
+        StartCoroutine(LoadMicro());
     }
 
     public IEnumerator DamageEnemy(int damageAmount)
     {
         sceneManager.pickMicrogame();
         yield return healthManager.DamageEnemy(damageAmount);
-        yield return dialogueManager.TypeText("Loading microgame " + sceneManager.gameToLoad.ToString());
-        sceneManager.loadMicroGame();
+        damageAmount = 0;
+        yield return LoadMicro();
     }
 
     public void KillPLayer()
-    {
+    { 
         Debug.Log("The PLayer is Dead");
     }
 
@@ -104,40 +101,69 @@ public class GameController : MonoBehaviour
 
     public void ReturnToMain(bool win)
     {
+        StartCoroutine(ReturnToMainStuff(false,win,false));
+    }
+
+    public void ReturnToMainAttackOrHeal(bool isAttack)
+    {
+        StartCoroutine(ReturnToMainStuff(true,false,isAttack));
+    }
+
+    private IEnumerator ReturnToMainStuff(bool isAttackOrHeal, bool win, bool isAttack)
+    {
         timer.TimerStop();
         SetCursor("cursor");
-        microGameWin = win;
+        yield return dialogueManager.TypeText("returning to the main scene"); 
         SceneManager.LoadScene("0_BattleScene");
+        enableThings(true);
         GetCamera();
-        dialogueManager.dialogue.text = "BATTLE";
-        if(win == true) { StartCoroutine(playerWonMicro()); }
-        else { StartCoroutine(playerLostMicro()); }
+        dialogueManager.dialogueLabel.text = "BATTLE";
+        if (isAttackOrHeal)
+        {
+            if ((damageAmount + healAmount) <= 0) { yield return LoadMicro(); }
+            else if (isAttack) { yield return DamageEnemy(damageAmount); }
+            else { yield return HealPlayer(healAmount); }
+        }
+        else
+        {
+            if (win) { yield return playerWonMicro(); }
+            else { yield return playerLostMicro(); }
+        }
+    }
+
+    private void enableThings(bool enable)
+    {
+        foreach (GameObject disableMe in stuffToDisable)
+        {
+            disableMe.SetActive(enable);
+        }
     }
 
     public void StartMicroGame()
     {
         SetCursor(sceneData.cursorMode);
-        dialogueManager.dialogueLabel.text = sceneData.microGameName;
-        dialogueManager.dialogue.text = sceneData.microGameInstruction;
         timer.TimerStart(sceneData.startTime, sceneData.isWinTimer);
     }
 
     private IEnumerator playerWonMicro()
     {
-        sceneManager.pickMicrogame();
         yield return dialogueManager.TypeText("The Player won the microgame");
-        yield return dialogueManager.TypeText("battle scene functionality not yet implemented");
-        yield return dialogueManager.TypeText("Loading microgame " + sceneData.microGameName);
-        sceneManager.loadMicroGame();
+        dialogueManager.LoadButtons(true);
     }
 
     private IEnumerator playerLostMicro()
     {
-        sceneManager.pickMicrogame();
         yield return dialogueManager.TypeText("The Player lost the microgame");
         yield return DamagePlayer(1);
-        yield return dialogueManager.TypeText("battle scene functionality not yet implemented");
+        dialogueManager.LoadButtons(true);
+    }
+
+    private IEnumerator LoadMicro()
+    {
+        dialogueManager.dialogueLabel.text = sceneData.microGameName;
         yield return dialogueManager.TypeText("Loading microgame " + sceneData.microGameName);
+        yield return dialogueManager.TypeText(sceneData.microGameInstruction);
+        enableThings(false);
         sceneManager.loadMicroGame();
     }
 

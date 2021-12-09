@@ -13,9 +13,9 @@ public class HealthManager : MonoBehaviour
 
     [ReadOnly]
     [SerializeField]
-    private int playerHealth, enemyHealth;
+    private float playerHealth, enemyHealth;
     [SerializeField]
-    private int playerMaxHealth, enemyMaxHealth, playerInitialHealth, enemyInitialHealth, playerHealthLow;
+    private float playerMaxHealth, enemyMaxHealth, playerInitialHealth, enemyInitialHealth, playerHealthLow;
 
     [SerializeField]
     private GameObject healthBar,damageBar;
@@ -130,17 +130,17 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    private void DamageBarEffect(int damageAmount)
+    private void DamageBarEffect(float damageAmount)
     {
-        Vector3 scale = new Vector3(((enemyMaxHealth/100) * damageAmount), 1, 1);
-        Vector3 pos = new Vector3(0.5f - (enemyMaxHealth / 100), 4.2f, -2);
+        Vector3 scale = new Vector3((1f/enemyMaxHealth) * damageAmount, 1f, 1f);
+        Vector3 pos = new Vector3(1.1f - ((damageAmount) * 0.8f), 4.2f, -2f);
         damageBar.transform.localScale = scale;
         damageBar.transform.localPosition = pos;
     }
     private void HealthBarRescale()
     {
-        Vector3 scale = new Vector3 ((enemyMaxHealth / 100) * enemyHealth, 1, 1);
-        Vector3 pos = new Vector3 (-3.3f - ((enemyMaxHealth / 100) * enemyHealth), 4.2f, -1);
+        Vector3 scale = new Vector3 ((1f / enemyMaxHealth) * enemyHealth, 1f, 1f);
+        Vector3 pos = new Vector3 (-3.3f - ((enemyMaxHealth - enemyHealth) * 0.4f), 4.2f, -1f);
         healthBar.transform.localScale = scale;
         healthBar.transform.localPosition = pos;
     }

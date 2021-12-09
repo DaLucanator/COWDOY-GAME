@@ -15,7 +15,6 @@ MonoBehaviour:
   startTime: 15
   isWinTimer: 0
   cursorMode: off
+  gameType: 
   microGameName: SNAKE SHAKE
-  microGameInstruction: 'Mash the keys.
-
-    Shake the snake from the boot!'
+  microGameInstruction: Mash the keys. Shake the snake from the boot!

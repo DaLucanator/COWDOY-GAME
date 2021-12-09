@@ -30,8 +30,12 @@ public class UI_Flash : MonoBehaviour
     {
         if(target == "player")
         {
+            Canvas.GetDefaultCanvasMaterial().color = flashColor;
+            dialogueManager.dialogue.color = flashColor;
             dialogueManager.playerHealth.color = flashColor;
             yield return new WaitForSeconds(0.5f);
+            Canvas.GetDefaultCanvasMaterial().color = Color.white;
+            dialogueManager.dialogue.color = Color.white;
             dialogueManager.playerHealth.color = Color.white;
             yield return new WaitForSeconds(0.5f);
         }

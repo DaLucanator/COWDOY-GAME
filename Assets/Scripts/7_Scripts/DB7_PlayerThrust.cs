@@ -8,7 +8,7 @@ public class DB7_PlayerThrust : MonoBehaviour
 
     private bool thrust;
     private bool reverse;
-
+    public AudioManager audioManager;
     public Rigidbody2D rigidbody;
     public float moveSpeed = 2;
 
@@ -44,6 +44,7 @@ public class DB7_PlayerThrust : MonoBehaviour
             if (gamelose == true)
             {
                 //Player Loss State
+                audioManager.PlayAuGameFail();
                 print("You Lose...");
                 gamelose = false;
                 rigidbody.velocity = Vector3.zero;

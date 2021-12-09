@@ -5,7 +5,7 @@ using UnityEngine;
 public class DB7_Player : MonoBehaviour
 {
     private float turnDirection;
-
+    public AudioManager audioManager;
     public DB7_Bullet bulletPrefab;
     public float turnSpeed;
 
@@ -22,6 +22,7 @@ public class DB7_Player : MonoBehaviour
 
     private void Shoot()
     {
+        audioManager.PlayAuGameShoot();
         DB7_Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
         bullet.Project(this.transform.up);
     }

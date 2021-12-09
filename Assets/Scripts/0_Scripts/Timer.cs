@@ -48,7 +48,9 @@ public class Timer : MonoBehaviour
             {
                 timerGo = false;
                 currentTime = 0;
-                GameController.current.ReturnToMain(isWinTimerLocal);
+                if (GameController.current.sceneData.gameType == "attack") { GameController.current.ReturnToMainAttackOrHeal(true); }
+                if (GameController.current.sceneData.gameType == "heal") { GameController.current.ReturnToMainAttackOrHeal(false); }
+                else { GameController.current.ReturnToMain(isWinTimerLocal); }
             }
         }
         if (displayTime >= 10) { timerText.text = "COUNTDOWN: " + displayTime.ToString(); }

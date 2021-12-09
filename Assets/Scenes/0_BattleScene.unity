@@ -339,6 +339,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443788962}
   m_CullTransparentMesh: 1
+--- !u!1 &472212908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 472212909}
+  m_Layer: 0
+  m_Name: Enemy Health Bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &472212909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472212908}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 955739794}
+  - {fileID: 2031506786}
+  - {fileID: 1190329798}
+  m_Father: {fileID: 1085759252}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &512740007
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +707,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1574067596}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: DamageEnemyButton
+        m_MethodName: ShootButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -891,11 +924,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955739793}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66, y: 84, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalPosition: {x: -3.3, y: 4.2000003, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1345579800}
-  m_RootOrder: 7
+  m_Father: {fileID: 472212909}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &955739795
 SpriteRenderer:
@@ -1052,6 +1085,7 @@ Transform:
   m_Children:
   - {fileID: 1574067595}
   - {fileID: 1345579800}
+  - {fileID: 472212909}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1367,11 +1401,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190329797}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 84.00001, z: -1}
-  m_LocalScale: {x: 1, y: 20, z: 20}
+  m_LocalPosition: {x: 0.5, y: 4.2000003, z: -2}
+  m_LocalScale: {x: 0.05, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1345579800}
-  m_RootOrder: 9
+  m_Father: {fileID: 472212909}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1190329799
 SpriteRenderer:
@@ -1522,9 +1556,6 @@ RectTransform:
   - {fileID: 1862449177}
   - {fileID: 443788963}
   - {fileID: 811641514}
-  - {fileID: 955739794}
-  - {fileID: 2031506786}
-  - {fileID: 1190329798}
   m_Father: {fileID: 1085759252}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1615,8 +1646,12 @@ MonoBehaviour:
   inMainScene: 1
   cursor: {fileID: 2800000, guid: 568c2b5e7a9aca74298b16e6367a51dd, type: 3}
   crosshair: {fileID: 2800000, guid: 48785915b16d13943b6dbafb69313e8f, type: 3}
+  stuffToDisable:
+  - {fileID: 472212908}
   canvas: {fileID: 1345579799}
   sceneData: {fileID: 0}
+  healAmount: 0
+  damageAmount: 0
 --- !u!114 &1574067597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1666,7 +1701,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamesToLoad:
+  - 6_BustaBird
+  - 7_Asteroids
+  - 10_WWSnakeShake
+  - 11WW_CactusAttackedUs
+  - 12WWBarFight
   - 28_BulletHell
+  - 24_WoodysRoundup
+  - 22_RiskyRocks
   gamesToNotLoad: []
   gameToLoad: 
 --- !u!114 &1574067600
@@ -2259,7 +2301,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1985504346}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1574067596}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: HealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1985504346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2323,11 +2377,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031506785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65, y: 87, z: 1.000061}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalPosition: {x: -3.25, y: 4.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1345579800}
-  m_RootOrder: 8
+  m_Father: {fileID: 472212909}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2031506787
 SpriteRenderer:

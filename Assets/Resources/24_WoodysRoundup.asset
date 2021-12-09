@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce742609763f7c41ae9eea6a73a5787, type: 3}
   m_Name: 24_WoodysRoundup
   m_EditorClassIdentifier: 
-  startTime: 15
+  startTime: 10
   isWinTimer: 0
   cursorMode: cursor
-  microGameName: WOODY'S ROUNDUP
-  microGameInstruction: 'Cattle RUN FROM Mouse
-
-    Herd them into the paddock!'
+  microGameName: BUFFALO THE BUFFALO
+  microGameInstruction: Mouse to shoo the bison. Corral the bison into the pen!

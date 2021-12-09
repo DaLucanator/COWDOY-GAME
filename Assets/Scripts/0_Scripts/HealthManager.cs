@@ -132,15 +132,15 @@ public class HealthManager : MonoBehaviour
 
     private void DamageBarEffect(int damageAmount)
     {
-        Vector3 scale = new Vector3((20 / enemyMaxHealth) * damageAmount, 20, 20);
-        Vector3 pos = new Vector3(10 - (enemyMaxHealth * 0.4f), 84, -1);
+        Vector3 scale = new Vector3(((enemyMaxHealth/100) * damageAmount), 1, 1);
+        Vector3 pos = new Vector3(0.5f - (enemyMaxHealth / 100), 4.2f, -2);
         damageBar.transform.localScale = scale;
         damageBar.transform.localPosition = pos;
     }
     private void HealthBarRescale()
     {
-        Vector3 scale = new Vector3 ((20 / enemyMaxHealth) * enemyHealth, 20, 20);
-        Vector3 pos = new Vector3 (-66 - ((enemyMaxHealth - enemyHealth) * 8), 84, 0);
+        Vector3 scale = new Vector3 ((enemyMaxHealth / 100) * enemyHealth, 1, 1);
+        Vector3 pos = new Vector3 (-3.3f - ((enemyMaxHealth / 100) * enemyHealth), 4.2f, -1);
         healthBar.transform.localScale = scale;
         healthBar.transform.localPosition = pos;
     }

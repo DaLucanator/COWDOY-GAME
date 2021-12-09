@@ -15,7 +15,6 @@ MonoBehaviour:
   startTime: 10
   isWinTimer: 0
   cursorMode: off
+  gameType: 
   microGameName: NEED FOR STEED
-  microGameInstruction: 'Button Mash!
-
-    Catch that train first!'
+  microGameInstruction: Mash the keys. Catch the train first!

@@ -7959,10 +7959,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a269be7d17f74254284707c182945d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healCount: 0
   healAmount1: 0
   healAmount2: 0
   healAmount3: 0
-  healAmount4: 0
+  movespeed: 0
 --- !u!1 &146283201
 GameObject:
   m_ObjectHideFlags: 0
@@ -50803,7 +50804,6 @@ GameObject:
   m_Component:
   - component: {fileID: 943995862}
   - component: {fileID: 943995861}
-  - component: {fileID: 943995863}
   - component: {fileID: 943995864}
   m_Layer: 0
   m_Name: 02_SnakeOil
@@ -50901,19 +50901,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &943995863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943995860}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84e4698c44227443a7664544e4af4ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
 --- !u!114 &943995864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50926,10 +50913,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a269be7d17f74254284707c182945d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healCount: 0
   healAmount1: 0
   healAmount2: 1
   healAmount3: 2
-  healAmount4: 3
+  movespeed: 1
 --- !u!1 &946384628
 GameObject:
   m_ObjectHideFlags: 0

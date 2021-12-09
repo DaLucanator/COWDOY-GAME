@@ -4,23 +4,32 @@ using UnityEngine;
 
 public class IconBrainScript : MonoBehaviour
 {
+    //woody wrote (most) this code
+
     public Transform leftEnd;
     public Transform rightEnd;
-    public int damageScale;
     public float speed;
     public float distBetween;
     public int powNum;
     public bool goingUp;
     public bool sliderIsMoving;
-    // Start is called before the first frame update
+
+    [SerializeField]
+    private int damageAmount1, damageAmount2, damageAmount3;
+
+    private string dialogueString;
+
+    private DialogueManager dialogueManager;
+    private Timer timer;
+
     void Start()
     {
+        dialogueManager = GameController.current.GetComponent<DialogueManager>();
+        timer = GameController.current.GetComponent<Timer>();
         sliderIsMoving = true;
         StartCoroutine(timing());
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         distBetween = (powNum) / 100f;
@@ -37,8 +46,13 @@ public class IconBrainScript : MonoBehaviour
 
         if (Input.anyKeyDown)
         {
-            sliderIsMoving = false;
-            DamCheck();
+            {
+                if (sliderIsMoving)
+                {
+                    sliderIsMoving = false;
+                    StartCoroutine(EndLevel());
+                }
+            }
         }
 
     }
@@ -47,8 +61,6 @@ public class IconBrainScript : MonoBehaviour
     {
         while (sliderIsMoving)
         {
-
-
             if (goingUp)
             {
                 powNum++;
@@ -61,34 +73,30 @@ public class IconBrainScript : MonoBehaviour
         }
     }
 
-    public void DamCheck()
-    {
-        /*if Dam == 1 {Miss/Low Damage}
-         if Dam == 2 {Mid/Normal Damage}
-        if Dam == 3 {High/Crit Damage}*/
-
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "damageLow")
         {
-            damageScale = 1;
+            GameController.current.damageAmount = damageAmount1;
+            dialogueString = "It's a miss!";
         }
         if (other.tag == "damageMed")
         {
-            damageScale = 2;
+            GameController.current.damageAmount = damageAmount2;
+            dialogueString = "It's a hit!";
         }
         if (other.tag == "damageHigh")
         {
-            damageScale = 3;
+            GameController.current.damageAmount = damageAmount3;
+            dialogueString = "A critical Hit";
         }
     }
 
-    IEnumerator endTime()
+    private IEnumerator EndLevel()
     {
-        //whatever graphic goes here at end
-        yield return new WaitForSeconds(2f);
-
+        timer.TimerStop();
+        yield return dialogueManager.TypeText("The Cowboy fired some shots.");
+        yield return dialogueManager.TypeText(dialogueString);
+        GameController.current.ReturnToMainAttackOrHeal(true);
     }
 }

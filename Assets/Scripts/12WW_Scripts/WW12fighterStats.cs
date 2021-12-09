@@ -13,9 +13,9 @@ public class WW12fighterStats : MonoBehaviour
     public bool defending;
     public bool AIAttemptCheck;
     public bool ended;
-    public Material Idle;
-    public Material Attack;
-    public Material Defend;
+    public Sprite Idle;
+    public Sprite Attack;
+    public Sprite Defend;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,15 +28,15 @@ public class WW12fighterStats : MonoBehaviour
 
         if (stance == 1)
         {
-            this.GetComponent<Renderer>().material = Idle;
+            this.GetComponent<SpriteRenderer>().sprite = Idle;
         }
         else if (stance == 2)
         {
-            this.GetComponent<Renderer>().material = Attack;
+            this.GetComponent<SpriteRenderer>().sprite = Attack;
         }
         else if (stance == 3)
         {
-            this.GetComponent<Renderer>().material = Defend;
+            this.GetComponent<SpriteRenderer>().sprite = Defend;
         }
         if (!ended)
         {

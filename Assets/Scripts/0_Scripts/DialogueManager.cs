@@ -47,8 +47,7 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator TypeText(string dialogueText)
     {
-        buttons.SetActive(false);
-        dialogueObject.SetActive(true);
+        LoadButtons(false);
 
         dialogue.text = "";
 
@@ -65,11 +64,11 @@ public class DialogueManager : MonoBehaviour
         continueImage.SetActive(false);
     }
 
-    public void LoadButtons()
+    public void LoadButtons(bool isActive)
     {
         dialogue.text = "";
-        dialogueObject.SetActive(false);
-        buttons.SetActive(true);
+        dialogueObject.SetActive(!isActive);
+        buttons.SetActive(isActive);
     }
 
 }

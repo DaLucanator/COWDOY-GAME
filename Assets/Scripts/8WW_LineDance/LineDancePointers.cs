@@ -10,6 +10,7 @@ public class LineDancePointers : MonoBehaviour
     public Material poseRight;
     public Material poseDown;
     public int positionChoice;
+    public bool Chungus; //Is Object Visable?
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,10 @@ public class LineDancePointers : MonoBehaviour
         {
             this.GetComponent<Renderer>().material = poseDown;
 
+        }
+        if (!Chungus && Input.anyKeyDown)
+        {
+            this.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }

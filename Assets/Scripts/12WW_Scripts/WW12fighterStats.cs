@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WW12fighterStats : MonoBehaviour
 {
+    public AudioManager audioManager;
+
     public GameObject theOtherGuy;
     public int health;
     public int ID;
@@ -82,6 +84,7 @@ public class WW12fighterStats : MonoBehaviour
 
     private void OnHit()
     {
+        audioManager.PlayAuGameShoot();
         health--;
         if (health < 1)
         {
@@ -99,6 +102,7 @@ public class WW12fighterStats : MonoBehaviour
     private void Win()
     {
         ended = true;
+        audioManager.PlayAuGameMicroWin();
         Debug.Log("win");
         GameController.current.ReturnToMain(true);
     }
@@ -106,6 +110,7 @@ public class WW12fighterStats : MonoBehaviour
     private void Lose()
     {
         ended = true;
+        audioManager.PlayAuGameMicroLose();
         Debug.Log("Lose");
         GameController.current.ReturnToMain(false);
     }
@@ -123,6 +128,10 @@ public class WW12fighterStats : MonoBehaviour
         if (theOtherGuy.GetComponent<WW12fighterStats>().stance != 3)
         {
             theOtherGuy.GetComponent<WW12fighterStats>().OnHit();
+        }
+        else
+        {
+            audioManager.PlayAuMenuBack();
         }
         //Else play block sound maybe?
     }

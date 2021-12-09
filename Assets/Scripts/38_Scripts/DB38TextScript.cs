@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DB38TextScript : MonoBehaviour
 {
+    public AudioManager audioManager;
+
     public GameObject TextBox;
     public GameObject Answer1;
     public GameObject Answer2;
@@ -42,6 +44,7 @@ public class DB38TextScript : MonoBehaviour
         //             Failed = true
         //          }
         //  }
+        audioManager.PlayAuMenuAccept();
         if (Slot1Filled == false)
         {
             print("Clicked an Answer");

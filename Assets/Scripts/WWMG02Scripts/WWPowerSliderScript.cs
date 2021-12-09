@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WWPowerSliderScript : MonoBehaviour
 {
+    public AudioManager audioManager;
+
     public GameObject icon;
     public GameObject powerPlace;
     public Transform topLoc;
@@ -36,10 +38,12 @@ public class WWPowerSliderScript : MonoBehaviour
 
         if (powNum > 99)
         {
+            audioManager.PlayAuMenuText();
             goingUp = false;
         }
         else if (powNum < 1)
         {
+            audioManager.PlayAuMenuText();
             goingUp = true;
         }
 
@@ -49,10 +53,12 @@ public class WWPowerSliderScript : MonoBehaviour
 
             if (powNum > 40 && powNum < 60)
             {
+                audioManager.PlayAuGameShootHit();
                 StartCoroutine(Win());
             }
             else
             {
+                audioManager.PlayAuGameFail();
                 Debug.Log("Lose");
                 GameController.current.ReturnToMain(false);
 

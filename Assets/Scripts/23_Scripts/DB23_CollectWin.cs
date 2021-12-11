@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DB23_CollectWin : MonoBehaviour
 {
+    public AudioManager audioManager;
+
     bool gamewin = true;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,6 +13,7 @@ public class DB23_CollectWin : MonoBehaviour
         {
             if (gamewin == true)
             {
+                audioManager.PlayAuGameMicroWin();
                 print("You Win!");
                 Destroy(gameObject);
                 gamewin = false;

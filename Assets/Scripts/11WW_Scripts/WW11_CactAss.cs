@@ -9,6 +9,7 @@ public class WW11_CactAss : MonoBehaviour
     public bool hover;
     public bool click;
 
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +28,12 @@ public class WW11_CactAss : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            audioManager.PlayAuGameShoot();
             click = true;
         }
         if (hover && this.thisCactus == badBrain.GetComponent<WW11_badBrain>().choose && Input.GetMouseButtonDown(0))
         {
+            audioManager.PlayAuGameShootHit();
             Win();
         }
         if (hover && this.thisCactus != badBrain.GetComponent<WW11_badBrain>().choose && Input.GetMouseButtonDown(0))

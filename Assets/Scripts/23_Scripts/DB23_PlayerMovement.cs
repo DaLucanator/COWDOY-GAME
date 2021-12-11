@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DB23_PlayerMovement : MonoBehaviour
 {
+    public AudioManager audioManager;
+
     public float speed = 10.0f;
     public Rigidbody2D rb;
     public Vector2 movement;
@@ -30,6 +32,7 @@ public class DB23_PlayerMovement : MonoBehaviour
     {
         if (collision.tag == "Hostile")
         {
+            audioManager.PlayAuGameFail();
             print("You Lose...");
             Destroy(gameObject);
             GameController.current.ReturnToMain(false);

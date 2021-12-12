@@ -15,5 +15,6 @@ MonoBehaviour:
   startTime: 9
   isWinTimer: 0
   cursorMode: crosshair
+  gameType: 
   microGameName: DESERT EAGLE
   microGameInstruction: Mouse to aim. Shoot the birds!

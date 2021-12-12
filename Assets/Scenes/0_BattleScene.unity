@@ -1847,10 +1847,16 @@ MonoBehaviour:
   - 7_Asteroids
   - 10_WWSnakeShake
   - 11WW_CactusAttackedUs
-  - 12WWBarFight
-  - 28_BulletHell
-  - 24_WoodysRoundup
+  - 12WW_BarFight
+  - 13_StickemUp
+  - 14WW_HorseRace
+  - 19WW_SlidingDrinks
+  - 21_WWCatchThatTrain
   - 22_RiskyRocks
+  - 23_CellEscape
+  - 24_WoodysRoundup
+  - 28_BulletHell
+  - 38_FireSpitter
   gamesToNotLoad: []
   gameToLoad: 
 --- !u!114 &1574067600

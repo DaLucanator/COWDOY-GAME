@@ -15,7 +15,8 @@ MonoBehaviour:
   startTime: 5
   isWinTimer: 0
   cursorMode: off
-  microGameName: LINE DANCE REVOLUTION 1835
+  gameType: 
+  microGameName: LINE DANCE REVOLUTION
   microGameInstruction: 'Arrowkey Movement
 
     Follow the Prompt!'

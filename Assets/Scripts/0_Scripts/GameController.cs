@@ -28,10 +28,13 @@ public class GameController : MonoBehaviour
     [ReadOnly]
     [SerializeField]
     private bool inMainScene = true;
+
     [SerializeField]
     private Texture2D cursor, crosshair;
     [SerializeField]
     private GameObject[] stuffToDisable;
+    [SerializeField]
+    private GameObject win,lose;
 
     public Canvas canvas;
     public SceneData sceneData;
@@ -90,8 +93,15 @@ public class GameController : MonoBehaviour
     }
 
     public void KillPLayer()
-    { 
-        Debug.Log("The PLayer is Dead");
+    {
+        canvas.enabled = false;
+        lose.SetActive(true);
+    }
+
+    public void KillEnemy()
+    {
+        canvas.enabled = false;
+        win.SetActive(true);
     }
 
     public void GetCamera()

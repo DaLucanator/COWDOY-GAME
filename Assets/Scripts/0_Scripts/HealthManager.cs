@@ -101,13 +101,6 @@ public class HealthManager : MonoBehaviour
     {
         for (int i = 1; i <= damageAmount; i++)
         {
-
-            if (enemyHealth <= 0)
-            {
-                yield return dialogueManager.TypeText(("The  Stranger  took  " + i.ToString() + "  damage and died"));
-                break;
-            }
-
             yield return ui_Flash.Flash(Color.red, "enemy");
             //add shake effect
             enemyHealth--;
@@ -135,8 +128,8 @@ public class HealthManager : MonoBehaviour
             }
 
         }
+        CheckEnemyHealth();
         HealthBarRescale();
-        //CheckHealth(); check enemy health
     }
 
     private void CheckHealth()
@@ -147,6 +140,11 @@ public class HealthManager : MonoBehaviour
             ui_Flash.constantFlashLowHealth = true;
             StartCoroutine(ui_Flash.ConstantFlash("lowHealth"));
         }
+    }
+
+    private void CheckEnemyHealth()
+    {
+        if (enemyHealth <= 0) { GameController.current.KillEnemy(); }
     }
 
     private void DamageBarEffect(float damageAmount)

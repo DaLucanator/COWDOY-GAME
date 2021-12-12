@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce742609763f7c41ae9eea6a73a5787, type: 3}
   m_Name: 22_RiskyRocks
   m_EditorClassIdentifier: 
-  startTime: 5
+  startTime: 14
   isWinTimer: 1
   cursorMode: off
+  gameType: 
   microGameName: PAIN TRAIN
-  microGameInstruction: Arrow keys to move. Dodge the incoming trains!
+  microGameInstruction: WASD to move. Dodge the incoming trains!

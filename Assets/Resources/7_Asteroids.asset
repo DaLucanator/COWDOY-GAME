@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce742609763f7c41ae9eea6a73a5787, type: 3}
   m_Name: 7_Asteroids
   m_EditorClassIdentifier: 
-  startTime: 10
+  startTime: 15
   isWinTimer: 1
   cursorMode: off
+  gameType: 
   microGameName: SNAKES ON A PLAIN
-  microGameInstruction: Arrow keys to move and aim. Space to shoot. Survive the snakes!
+  microGameInstruction: W and S to move, A and D to aim. Space to shoot. Survive
+    the snakes!

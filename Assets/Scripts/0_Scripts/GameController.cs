@@ -115,9 +115,9 @@ public class GameController : MonoBehaviour
         SetCursor("cursor");
         yield return dialogueManager.TypeText("returning to the main scene"); 
         SceneManager.LoadScene("0_BattleScene");
-        enableThings(true);
         GetCamera();
         dialogueManager.dialogueLabel.text = "BATTLE";
+        enableThings(true);
         if (isAttackOrHeal)
         {
             if ((damageAmount + healAmount) <= 0) { yield return LoadMicro(); }
@@ -171,12 +171,15 @@ public class GameController : MonoBehaviour
     {
         Vector2 cursorVector = new Vector2(0, 0); ;
         Texture2D cursorTex = cursor;
+
         if (cursorMode == "crosshair")
         {
             cursorVector = new Vector2(16, 16);
             cursorTex = crosshair;
         }
         if(cursorMode == "off") { Cursor.visible = false; }
+        else { Cursor.visible = true; }
+
         Cursor.SetCursor(cursorTex, cursorVector, CursorMode.Auto);
     }
 

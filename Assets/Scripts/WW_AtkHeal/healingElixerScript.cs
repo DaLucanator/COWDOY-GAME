@@ -21,7 +21,7 @@ public class healingElixerScript : MonoBehaviour
             {
                 GameController.current.healAmount = healAmount1;
             }
-            else if (healCount < 90)
+            else if (healCount < 115)
             {
                 GameController.current.healAmount = healAmount2;
             }

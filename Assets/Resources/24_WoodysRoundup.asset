@@ -15,5 +15,6 @@ MonoBehaviour:
   startTime: 10
   isWinTimer: 0
   cursorMode: cursor
+  gameType: 
   microGameName: BUFFALO THE BUFFALO
   microGameInstruction: Mouse to shoo the bison. Corral the bison into the pen!

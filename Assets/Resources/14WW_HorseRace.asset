@@ -17,4 +17,4 @@ MonoBehaviour:
   cursorMode: off
   gameType: 
   microGameName: NEED FOR STEED
-  microGameInstruction: Mash the keys. Catch the train first!
+  microGameInstruction: "Mash the keys. \nCatch the train first!"

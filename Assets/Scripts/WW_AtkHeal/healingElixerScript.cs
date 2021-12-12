@@ -11,10 +11,14 @@ public class healingElixerScript : MonoBehaviour
     private int healAmount1, healAmount2, healAmount3;
     [SerializeField]
     private float movespeed;
+
+    public AudioManager audioManager;
+
     void Update()
     {
         if (Input.anyKeyDown)
         {
+            audioManager.PlayAuMenuText();
             healCount++;
             transform.Rotate(0, 0, movespeed);
             if (healCount > 90)

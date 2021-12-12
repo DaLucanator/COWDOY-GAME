@@ -14,6 +14,8 @@ public class IconBrainScript : MonoBehaviour
     public bool goingUp;
     public bool sliderIsMoving;
 
+    public AudioManager audioManager;
+
     [SerializeField]
     private int damageAmount1, damageAmount2, damageAmount3;
 
@@ -50,6 +52,7 @@ public class IconBrainScript : MonoBehaviour
                 if (sliderIsMoving)
                 {
                     sliderIsMoving = false;
+                    audioManager.PlayAuGameAttack();
                     StartCoroutine(EndLevel());
                 }
             }
@@ -88,7 +91,7 @@ public class IconBrainScript : MonoBehaviour
         if (other.tag == "damageHigh")
         {
             GameController.current.damageAmount = damageAmount3;
-            dialogueString = "A critical Hit";
+            dialogueString = "A critical Hit!!";
         }
     }
 

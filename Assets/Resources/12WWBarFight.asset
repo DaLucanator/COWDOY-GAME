@@ -15,5 +15,6 @@ MonoBehaviour:
   startTime: 10
   isWinTimer: 0
   cursorMode: off
+  gameType: 
   microGameName: WHISKEY BUSINESS
-  microGameInstruction: A to attack. S to block. Win the bar fight!
+  microGameInstruction: "A to attack. \nS to block. \nWin the bar fight!"

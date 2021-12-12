@@ -133,7 +133,7 @@ public class HealthManager : MonoBehaviour
     private void DamageBarEffect(float damageAmount)
     {
         Vector3 scale = new Vector3((1f/enemyMaxHealth) * damageAmount, 1f, 1f);
-        Vector3 pos = new Vector3(1.1f - ((damageAmount) * 0.8f), 4.2f, -2f);
+        Vector3 pos = new Vector3(1.1f - (0.8f * (enemyMaxHealth - enemyHealth)) + (0.4f * (damageAmount-1f)), 4.2f, -2f);
         damageBar.transform.localScale = scale;
         damageBar.transform.localPosition = pos;
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1668,7 +1668,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b9e2d9eca23349244ae49d1a8bbb7a8b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2015,15 +2015,15 @@ MonoBehaviour:
   - 7_Asteroids
   - 10_WWSnakeShake
   - 11WW_CactusAttackedUs
-  - 12WW_BarFight
+  - 12WWBarFight
+  - 28_BulletHell
+  - 24_WoodysRoundup
+  - 22_RiskyRocks
   - 13_StickemUp
   - 14WW_HorseRace
   - 19WW_SlidingDrinks
-  - 21_WWCatchThatTrain
-  - 22_RiskyRocks
-  - 23_CellEscape
-  - 24_WoodysRoundup
-  - 28_BulletHell
+  - 21WW_CatchThatTrain
+  - 24_CellEscape
   - 38_FireSpitter
   gamesToNotLoad: []
   gameToLoad: 

@@ -25,7 +25,10 @@ public class HealthManager : MonoBehaviour
     public SpriteRenderer damageBarSprite,healthBarSprite;
 
     public SpriteRenderer healthBarFrame;
-
+    //New for music checking
+    bool newMusicPlaying;
+    public AudioClip newTrack;
+    private MusicKeep checkTrack;
 
     private void Awake()
     {
@@ -41,6 +44,8 @@ public class HealthManager : MonoBehaviour
     private void Start()
     {
         dialogueManager.playerHealth.text = playerHealth.ToString();
+        //New for audio
+        checkTrack = FindObjectOfType<MusicKeep>();
     }
 
     public IEnumerator HealPlayer(int healAmount)
@@ -115,6 +120,20 @@ public class HealthManager : MonoBehaviour
                 yield return dialogueManager.TypeText(("The  Stranger  took  " + damageAmount.ToString() + "  damage"));
                 ui_Flash.constantFlashDamageEnemy = false;
             }
+            //New Audio Scripting
+            if (newMusicPlaying == false)
+            {
+                if (enemyHealth <= (enemyInitialHealth * 0.5f))
+                {
+                    if (checkTrack != null)
+                    {
+                        checkTrack.ChangeBGM(newTrack);
+                    }
+                    Debug.Log("New Music Playing");
+                    newMusicPlaying = true;
+                }
+            }
+
         }
         HealthBarRescale();
         //CheckHealth(); check enemy health

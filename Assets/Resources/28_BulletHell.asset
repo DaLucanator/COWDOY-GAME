@@ -15,5 +15,6 @@ MonoBehaviour:
   startTime: 10
   isWinTimer: 1
   cursorMode: off
+  gameType: microgame
   microGameName: BISON HELL
-  microGameInstruction: Arrow Keys to Move. Dodge the incoming Bison!
+  microGameInstruction: WASD to Move. Dodge the incoming Bison!

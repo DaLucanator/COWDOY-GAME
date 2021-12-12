@@ -2794,7 +2794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftEnd: {fileID: 983508334}
   rightEnd: {fileID: 520308767}
-  speed: 0
+  speed: 0.0045
   distBetween: 0
   powNum: 0
   goingUp: 0
